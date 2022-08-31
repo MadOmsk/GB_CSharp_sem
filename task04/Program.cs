@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*Нахождение наибольшего числа из трёх*/
+using System;
 
 int[] numbers = new int[3];
 Console.WriteLine("Введите первое число");

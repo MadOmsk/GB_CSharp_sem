@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*Вывод последней цифры трёхзначного числа*/
+using System;
 
 Console.WriteLine("Введите трёхзначное число");
 string input = Console.ReadLine();

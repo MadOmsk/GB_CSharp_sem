@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*Вывод чисел от -N до N*/
+using System;
 
 Console.WriteLine("Введите число");
 string input = Console.ReadLine();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*Определение, является ли число квадратом другого*/
+using System;
 
 Console.WriteLine("Введите первое число");
 string input1 = Console.ReadLine();

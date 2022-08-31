@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*Вывод дней недели по номеру*/
+using System;
 
 Console.WriteLine("Введите номер дня недели");
 string input = Console.ReadLine();
