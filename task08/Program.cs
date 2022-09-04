@@ -5,14 +5,15 @@ internal class Program
 
     static void Main(string[] args)
     {
+        do { 
+            /*Просит пользователя ввести число*/
+            Console.WriteLine("Введите положительное целое число");
+            bool status = double.TryParse(Console.ReadLine(), out double inputNumber); //ввод числа, преобразование в int
 
-        /*Просит пользователя ввести число*/
-        Console.WriteLine("Введите положительное целое число");
-        bool status = double.TryParse(Console.ReadLine(), out double inputNumber); //ввод числа, преобразование в int
+            int[] evens = checkParsedValue(generateEvenNumbers, status, inputNumber); //проверка числа, применение к нему метода generateEvenNumbers
 
-        int[] evens = checkParsedValue(generateEvenNumbers, status, inputNumber); //проверка числа, применение к нему метода generateEvenNumbers
-
-        Console.Write(string.Join(", ", evens)); //вывод массива
+            Console.WriteLine(string.Join(", ", evens)); //вывод массива
+        } while(false);
 
         /*Метод проверяет является ли число целым положительным, преобразовывает его в int и выполняет необходимую операцию с этим числом, имеющую на выходе int[]
         На входе bool и double - результат double.TryParse()*/
