@@ -1,18 +1,9 @@
-﻿/*Определение, является ли число квадратом другого*/
-using System;
+﻿int firstNumber = EducationLibrary.ReadLineWithMessage("Введите первое число");
+int secondNumber = EducationLibrary.ReadLineWithMessage("Введите второе число");
 
-Console.WriteLine("Введите первое число");
-string input1 = Console.ReadLine();
-Console.WriteLine("Введите второе число");
-string input2 = Console.ReadLine();
-int firstNumber = int.Parse(input1);
-int secondNumber = int.Parse(input2);
 if (firstNumber == secondNumber * secondNumber)
 {
     Console.WriteLine($"Число {firstNumber} является квадратом {secondNumber}");
-    //Console.WriteLine("Число " + firstNumber + " является квадратом " + secondNumber);
-    //Console.WriteLine("Число {0} является квадратом {1}", firstNumber, secondNumber);
 }
 else
     Console.WriteLine($"Число {firstNumber} НЕ является квадратом {secondNumber}");
-

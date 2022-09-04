@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\education_library\EducationLibrary\EducationLibrary.csproj" />
+    <ProjectReference Include="..\EducationLibrary\EducationLibrary.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

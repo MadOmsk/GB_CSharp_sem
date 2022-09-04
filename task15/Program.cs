@@ -1,6 +1,7 @@
-﻿
+﻿/*Программа принимает на ввод номер дня недели и выводит является ли этот день выходным*/
+using EducationLibraries;
 
-int numberDayOfWeek = ReadLineWithMessage("Введите номер дня недели");
+int numberDayOfWeek = EducationLibrary.ReadLineWithMessage("Введите номер дня недели");
 
 switch (numberDayOfWeek)
 {
@@ -18,11 +19,4 @@ switch (numberDayOfWeek)
     default:
         Console.WriteLine("Нет такого дня недели");
         break;
-}
-
-/*Метод выводит сообщение, читает строку со ввода терминала и преобразовывает её в int*/
-int ReadLineWithMessage(string message)
-{
-    Console.WriteLine(message);
-    return int.Parse(Console.ReadLine());
 }

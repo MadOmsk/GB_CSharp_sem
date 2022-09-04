@@ -1,0 +1,1 @@
+Compile EducationLibrary first
