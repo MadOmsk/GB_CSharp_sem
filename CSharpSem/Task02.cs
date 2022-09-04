@@ -1,16 +1,17 @@
 /*Сравнение двух чисел.*/
 using EducationLibraries;
 
-public class Task02 : IRunnableFromConsole
+internal class Task02 : IRunnableFromConsole
 {
     private static string description = "Сравнение двух чисел.";
-    public static void Run()
+    private static int numberOfTask = 2;
+    internal static void Run()
     {
         Console.WriteLine(description);
 
         int firstNumber = EducationLibrary.ReadLineWithMessage("Введите первое число");
         int secondNumber = EducationLibrary.ReadLineWithMessage("Введите второе число");
-    
+
         if (firstNumber > secondNumber)//сравниваем числа и выводим результат
             Console.WriteLine(firstNumber + " > " + secondNumber);
         else if (firstNumber < secondNumber)

@@ -1,11 +1,11 @@
 /*Определение, является ли первое число квадратом второго.*/
 using EducationLibraries;
 
-public class Task01 : IRunnableFromConsole
+internal class Task01 : IRunnableFromConsole
 {
     private static string description = "Определение, является ли первое число квадратом второго.";
     private static int numberOfTask = 1;
-    public static void Run()
+    internal static void Run()
     {
         Console.WriteLine(description);
 
@@ -16,7 +16,6 @@ public class Task01 : IRunnableFromConsole
             Console.WriteLine($"Число {firstNumber} является квадратом {secondNumber}");
         else
             Console.WriteLine($"Число {firstNumber} НЕ является квадратом {secondNumber}");
-
-        EducationLibrary.PressSpaceToContinue();
     }
+    internal static string getDescription() { return description; }
 }

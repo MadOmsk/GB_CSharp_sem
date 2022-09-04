@@ -1,7 +1,7 @@
 ﻿/*Вывод чётных чисел от 1 до N*/
 internal class Program
 {
-    public delegate int[] integerDelegate(int num); //Делегат, работающий с int, выводит int[]
+    private delegate int[] integerDelegate(int num); //Делегат, работающий с int, выводит int[]
 
     static void Main(string[] args)
     {
