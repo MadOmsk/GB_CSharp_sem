@@ -3,7 +3,7 @@
 //ПЕРЕДЕЛАТЬ
 using EducationLibraries;
 
-internal class Task13 : IRunnableFromConsole
+internal class Task13 : Task, IRunnableFromConsole
 {
     private static string description = "Программа выводит вторую цифру введённого числа или сообщает, что её нет.";
     private static int numberOfTask = 13;
@@ -11,7 +11,7 @@ internal class Task13 : IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = ReadLineWithMessage("Введите целое число");
+        int number = EducationLibrary.ReadLineWithMessage("Введите целое число");
         if (number > 99)
         {
             Console.Write(number + " -> ");
@@ -20,13 +20,5 @@ internal class Task13 : IRunnableFromConsole
         }
         else
             Console.WriteLine("У этого числа нет трёх разрядов");
-
-
-        /*Метод выводит сообщение, читает строку со ввода терминала и преобразовывает её в int*/
-        int ReadLineWithMessage(string message)
-        {
-            Console.WriteLine(message);
-            return int.Parse(Console.ReadLine());
-        }
     }
 }

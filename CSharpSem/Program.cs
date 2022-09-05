@@ -1,5 +1,5 @@
 ﻿using EducationLibraries;
-class Program : IRunnableFromConsole
+class Program
 {
     private delegate void runDelegate(); //Делегат для метода Run
 
@@ -97,7 +97,9 @@ class Program : IRunnableFromConsole
     }
     private static void extendedRun(runDelegate runDelegate1)
     {
-        System.Console.WriteLine(runDelegate1.Method.DeclaringType);
+        
+        //runDelegate1 += runDelegate1.Method;
+        Console.WriteLine(runDelegate1.Method.DeclaringType);
         /*Выводит описание задачи.*/
         //Console.WriteLine(runDelegate1.getDescription);
         /*Запускает метод Run задачи*/
