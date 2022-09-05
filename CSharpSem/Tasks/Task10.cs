@@ -1,11 +1,11 @@
 /*Программа выводит вторую цифру трёхзначного числа.*/
 using EducationLibraries;
 
-internal class Task10 : IRunnableFromConsole
+internal class Task10 : Task, IRunnableFromConsole
 {
     private static string description = "Программа выводит вторую цифру трёхзначного числа.";
     private static int numberOfTask = 10;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

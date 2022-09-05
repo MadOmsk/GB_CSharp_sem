@@ -1,11 +1,11 @@
 /*Сравнение двух чисел.*/
 using EducationLibraries;
 
-internal class Task02 : IRunnableFromConsole
+internal class Task02 : Task, IRunnableFromConsole
 {
     private static string description = "Сравнение двух чисел.";
     private static int numberOfTask = 2;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

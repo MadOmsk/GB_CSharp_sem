@@ -1,11 +1,11 @@
 /*Вывод чисел от -N до N.*/
 using EducationLibraries;
 
-internal class Task05 : IRunnableFromConsole
+internal class Task05 : Task, IRunnableFromConsole
 {
     private static string description = "Вывод чисел от -N до N.";
     private static int numberOfTask = 5;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

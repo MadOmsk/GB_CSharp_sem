@@ -1,11 +1,11 @@
 /*Программа сообщает кратно ли введённое число 7 и 23 одновременно.*/
 using EducationLibraries;
 
-internal class Task14 : IRunnableFromConsole
+internal class Task14 : Task, IRunnableFromConsole
 {
     private static string description = "Программа сообщает кратно ли введённое число 7 и 23 одновременно.";
     private static int numberOfTask = 14;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

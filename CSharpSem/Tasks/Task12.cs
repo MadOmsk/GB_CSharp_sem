@@ -1,11 +1,11 @@
 /*Программа выводит остаток от деления одного числа на другое, либо сообщает, что одно число кратно другому.*/
 using EducationLibraries;
 
-internal class Task12 : IRunnableFromConsole
+internal class Task12 : Task, IRunnableFromConsole
 {
     private static string description = "Программа выводит остаток от деления одного числа на другое, либо сообщает, что одно число кратно другому.";
     private static int numberOfTask = 12;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

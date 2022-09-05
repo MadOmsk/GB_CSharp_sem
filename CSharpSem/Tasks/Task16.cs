@@ -1,11 +1,11 @@
 /*Программа сообщает является ли одно введённое число квадратом другого.*/
 using EducationLibraries;
 
-internal class Task16 : IRunnableFromConsole
+internal class Task16 : Task, IRunnableFromConsole
 {
     private static string description = "Программа сообщает является ли одно введённое число квадратом другого.";
     private static int numberOfTask = 16;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

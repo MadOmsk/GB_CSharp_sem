@@ -1,11 +1,11 @@
-
+/*Программа выводит случайное число в диапазоне [10, 99] и показывает наибольшую цифру.*/
 using EducationLibraries;
 
-internal class Task09 : IRunnableFromConsole
+internal class Task09 : Task, IRunnableFromConsole
 {
-    private static string description = " .";
+    private static string description = "Программа выводит случайное число в диапазоне [10, 99] и показывает наибольшую цифру.";
     private static int numberOfTask = 9;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
         

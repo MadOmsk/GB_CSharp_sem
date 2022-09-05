@@ -1,11 +1,11 @@
 /*Определение чётности числа.*/
 using EducationLibraries;
 
-internal class Task06 : IRunnableFromConsole
+internal class Task06 : Task, IRunnableFromConsole
 {
     private static string description = "Определение чётности числа.";
     private static int numberOfTask = 6;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

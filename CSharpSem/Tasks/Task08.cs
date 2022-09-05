@@ -2,13 +2,13 @@
 
 using EducationLibraries;
 
-internal class Task08 : IRunnableFromConsole
+internal class Task08 : Task, IRunnableFromConsole
 {
     private delegate int[] integerDelegate(int num); //Делегат, работающий с int, выводит int[]
 
     private static string description = "Вывод чётных чисел от 1 до N.";
     private static int numberOfTask = 8;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

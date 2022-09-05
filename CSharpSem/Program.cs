@@ -1,10 +1,23 @@
 ﻿using EducationLibraries;
+using System.Reflection;
 class Program
 {
-    private delegate void runDelegate(); //Делегат для метода Run
+    /*Делегат для выполнения методов наследников класса Task*/
+    private delegate void taskDelegate();
+
+    /*Массив методов Run*/
+    static taskDelegate[] taskRun = { Task01.Run, Task02.Run, Task03.Run, Task04.Run, Task05.Run,
+                                         Task06.Run, Task07.Run, Task08.Run, Task09.Run, Task10.Run,
+                                         Task11.Run, Task12.Run, Task13.Run, Task14.Run, Task15.Run,
+                                         Task16.Run };
 
     static void Main(string[] args)
     {
+        Assembly assembly = Assembly.GetExecutingAssembly();
+        List<Type> types = new List<Type>();
+        foreach (Type type in assembly.GetTypes())
+            if (type.Namespace == "Task")
+                types.Add(type);
         /*Переменная для выхода из бесконечного цикла.*/
         bool quitCheck = true;
 
@@ -16,66 +29,12 @@ class Program
             string userInput = Console.ReadLine()!;
             bool isUserInputInt = int.TryParse(userInput, out int numberOfTask);
 
-            /*Двойной вложенный свич. 
-            В случае если переменная isUserInput = true - выполняется выбор задачи.
+            /*В случае если переменная isUserInput = true - выполняется выбор задачи.
             Если она false, то обрабатываются текстовое значение введённой строки, например, выход из программы.*/
             switch (isUserInputInt)
             {
                 case true:
-
-                    switch (numberOfTask)
-                    {
-                        case 1:
-                            extendedRun(Task01.Run);
-                            break;
-                        case 2:
-                            extendedRun(Task02.Run);
-                            break;
-                        case 3:
-                            extendedRun(Task03.Run);
-                            break;
-                        case 4:
-                            extendedRun(Task04.Run);
-                            break;
-                        case 5:
-                            extendedRun(Task05.Run);
-                            break;
-                        case 6:
-                            extendedRun(Task06.Run);
-                            break;
-                        case 7:
-                            extendedRun(Task07.Run);
-                            break;
-                        case 8:
-                            extendedRun(Task08.Run);
-                            break;
-                        case 9:
-                            extendedRun(Task09.Run);
-                            break;
-                        case 10:
-                            extendedRun(Task10.Run);
-                            break;
-                        case 11:
-                            extendedRun(Task11.Run);
-                            break;
-                        case 12:
-                            extendedRun(Task12.Run);
-                            break;
-                        case 13:
-                            extendedRun(Task13.Run);
-                            break;
-                        case 14:
-                            extendedRun(Task14.Run);
-                            break;
-                        case 15:
-                            extendedRun(Task15.Run);
-                            break;
-                        case 16:
-                            extendedRun(Task16.Run);
-                            break;
-                        default:
-                            break;
-                    }
+                    taskRun[numberOfTask - 1].Invoke();
                     break;
                 case false:
                     switch (userInput)
@@ -84,20 +43,21 @@ class Program
                         case "Q":
                             quitCheck = false;
                             break;
+                        case "help":
+                            help();
+                            break;
                         default:
                             break;
                     }
                     break;
                 default:
             }
-
         } while (quitCheck);
-
-
     }
-    private static void extendedRun(runDelegate runDelegate1)
+
+    private static void extendedRun(taskDelegate runDelegate1)
     {
-        
+
         //runDelegate1 += runDelegate1.Method;
         Console.WriteLine(runDelegate1.Method.DeclaringType);
         /*Выводит описание задачи.*/
@@ -106,6 +66,13 @@ class Program
         runDelegate1();
         /*Запускает ожидание до нажатия кнопки Space*/
         EducationLibrary.PressSpaceToContinue();
+    }
+
+    /*Вывод справки.*/
+    private static void help()
+    {
+        Console.WriteLine("Введите q для выхода");
+        Console.WriteLine("Введите номер задачи для выполнения задачи");
     }
 }
 

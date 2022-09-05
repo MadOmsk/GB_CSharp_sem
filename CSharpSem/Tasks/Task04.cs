@@ -1,11 +1,11 @@
 /*Нахождение наибольшего числа из трёх.*/
 using EducationLibraries;
 
-internal class Task04 : IRunnableFromConsole
+internal class Task04 : Task, IRunnableFromConsole
 {
     private static string description = "Нахождение наибольшего числа из трёх.";
     private static int numberOfTask = 4;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

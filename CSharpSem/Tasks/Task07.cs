@@ -1,11 +1,11 @@
 /*Вывод последней цифры трёхзначного числа.*/
 using EducationLibraries;
 
-internal class Task07 : IRunnableFromConsole
+internal class Task07 : Task, IRunnableFromConsole
 {
     private static string description = "Вывод последней цифры трёхзначного числа.";
     private static int numberOfTask = 7;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

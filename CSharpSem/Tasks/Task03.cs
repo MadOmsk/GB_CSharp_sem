@@ -1,11 +1,11 @@
 /*Вывод дней недели по номеру.*/
 using EducationLibraries;
 
-internal class Task03 : IRunnableFromConsole
+internal class Task03 : Task, IRunnableFromConsole
 {
     private static string description = "Вывод дней недели по номеру.";
     private static int numberOfTask = 3;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 

@@ -1,11 +1,11 @@
 /*Программа принимает на ввод номер дня недели и выводит является ли этот день выходным.*/
 using EducationLibraries;
 
-internal class Task15 : IRunnableFromConsole
+internal class Task15 : Task, IRunnableFromConsole
 {
     private static string description = "Программа принимает на ввод номер дня недели и выводит является ли этот день выходным.";
     private static int numberOfTask = 15;
-    internal static void Run()
+    new internal static void Run()
     {
         Console.WriteLine(description);
 
