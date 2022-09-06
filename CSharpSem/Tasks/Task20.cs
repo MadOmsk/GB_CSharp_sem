@@ -42,7 +42,7 @@ class Point
     internal int X, Y;
 
     /*Расчитывает расстояние между двумя точками на декартовой плоскости, возвращает double*/
-    public static double CalculateDistance(Point a, Point b)
+    internal static double CalculateDistance(Point a, Point b)
     {
         return Math.Sqrt(Math.Pow(b.X - a.X, 2) + Math.Pow(b.Y - a.Y, 2));
     }
