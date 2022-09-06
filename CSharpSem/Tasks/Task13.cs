@@ -14,7 +14,7 @@ internal class Task13 : Task, IRunnableFromConsole
         if (number > 99)
         {
             /*Это выражение преобразовывает число в строку, затем из этой строки присваивает 3 символ переменной thirdDigit.*/
-            string thirdDigit = number.ToString().Substring(2, 1);
+            char thirdDigit = number.ToString()[2];
             Console.WriteLine($"Третья цифра числа {number} - {thirdDigit}");
         }
         else

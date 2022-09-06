@@ -8,7 +8,8 @@ class Program
     static taskDelegate[] taskRun = { Task01.Run, Task02.Run, Task03.Run, Task04.Run, Task05.Run,
                                     Task06.Run, Task07.Run, Task08.Run, Task09.Run, Task10.Run,
                                     Task11.Run, Task12.Run, Task13.Run, Task14.Run, Task15.Run,
-                                    Task16.Run };
+                                    Task16.Run, Task17.Run, Task18.Run, Task19.Run, Task20.Run,
+                                    Task21.Run, Task22.Run};
 
     static void Main(string[] args)
     {
@@ -75,5 +76,3 @@ class Program
         Console.WriteLine("Введите номер задачи для выполнения задачи");
     }
 }
-
-/**/
