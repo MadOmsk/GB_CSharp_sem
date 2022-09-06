@@ -12,6 +12,4 @@ public interface IRunnableFromConsole
     /*Описание что делает класс, оно же выводится как сообщение перед выполнением.*/
     private static string? description { get; }
     /*Переменная, по которой можно запустить метод Run().*/
-    /*Пока не реализовано.*/
-    private static int numberOfTask;
 }
