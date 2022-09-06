@@ -33,7 +33,7 @@ class Program
                     if (numberOfTask > 0 && numberOfTask <= taskRun.Length)
                         extendedRun(numberOfTask - 1);
                     else
-                    {
+                    {  
                         Console.WriteLine("Введите корректный номер задачи");
                         EducationLibrary.PressSpaceToContinue();
                     }
@@ -76,3 +76,4 @@ class Program
     }
 }
 
+/**/
