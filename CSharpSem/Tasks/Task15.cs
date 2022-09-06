@@ -4,13 +4,15 @@ using EducationLibraries;
 internal class Task15 : Task, IRunnableFromConsole
 {
     private static string description = "Программа принимает на ввод номер дня недели и выводит является ли этот день выходным.";
-    private static int numberOfTask = 15;
+
     new internal static void Run()
     {
         Console.WriteLine(description);
 
-        int numberDayOfWeek = EducationLibrary.ReadLineWithMessage("Введите номер дня недели");
+        int numberDayOfWeek = EducationLibrary.ConsoleInt("Введите номер дня недели");
 
+        /*Сообщение для вывода после определения дня недели.*/
+        string message = "";
         switch (numberDayOfWeek)
         {
             case 1:
@@ -18,15 +20,16 @@ internal class Task15 : Task, IRunnableFromConsole
             case 3:
             case 4:
             case 5:
-                Console.WriteLine("Это будний день");
+                message = "Это будний день";
                 break;
             case 6:
             case 7:
-                Console.WriteLine("Это выходной");
+                message = "Это выходной";
                 break;
             default:
-                Console.WriteLine("Нет такого дня недели");
+                message = "Нет такого дня недели";
                 break;
         }
+        Console.WriteLine(message);
     }
 }

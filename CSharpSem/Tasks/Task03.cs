@@ -4,12 +4,12 @@ using EducationLibraries;
 internal class Task03 : Task, IRunnableFromConsole
 {
     private static string description = "Вывод дней недели по номеру.";
-    private static int numberOfTask = 3;
+  
     new internal static void Run()
     {
         Console.WriteLine(description);
 
-        int numberOfDay = EducationLibrary.ReadLineWithMessage("Введите номер дня недели");
+        int numberOfDay = EducationLibrary.ConsoleInt("Введите номер дня недели");
 
         switch (numberOfDay)
         {

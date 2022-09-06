@@ -1,5 +1,4 @@
 ﻿using EducationLibraries;
-using System.Reflection;
 class Program
 {
     /*Делегат для выполнения методов наследников класса Task*/
@@ -7,26 +6,23 @@ class Program
 
     /*Массив методов Run*/
     static taskDelegate[] taskRun = { Task01.Run, Task02.Run, Task03.Run, Task04.Run, Task05.Run,
-                                         Task06.Run, Task07.Run, Task08.Run, Task09.Run, Task10.Run,
-                                         Task11.Run, Task12.Run, Task13.Run, Task14.Run, Task15.Run,
-                                         Task16.Run };
+                                    Task06.Run, Task07.Run, Task08.Run, Task09.Run, Task10.Run,
+                                    Task11.Run, Task12.Run, Task13.Run, Task14.Run, Task15.Run,
+                                    Task16.Run };
 
     static void Main(string[] args)
     {
-        Assembly assembly = Assembly.GetExecutingAssembly();
-        List<Type> types = new List<Type>();
-        foreach (Type type in assembly.GetTypes())
-            if (type.Namespace == "Task")
-                types.Add(type);
-        /*Переменная для выхода из бесконечного цикла.*/
+        /*Переменная для выхода из бесконечного цикла*/
         bool quitCheck = true;
 
         /*Бесконечный цикл, можно выйти, если quitCheck становится false, например, при введении Q.*/
         do
         {
-            //Console.Clear();
+
+            Console.Clear();
             Console.WriteLine("Введите номер задачи или q для выхода");
             string userInput = Console.ReadLine()!;
+            /*Проверяет введены цифры или буквы.*/
             bool isUserInputInt = int.TryParse(userInput, out int numberOfTask);
 
             /*В случае если переменная isUserInput = true - выполняется выбор задачи.
@@ -34,7 +30,8 @@ class Program
             switch (isUserInputInt)
             {
                 case true:
-                    taskRun[numberOfTask - 1].Invoke();
+                    if (numberOfTask > 0 && numberOfTask <= taskRun.Length)
+                        extendedRun(numberOfTask - 1);
                     break;
                 case false:
                     switch (userInput)
@@ -47,6 +44,8 @@ class Program
                             help();
                             break;
                         default:
+                            Console.WriteLine("Введите корректную команду");
+                            EducationLibrary.PressSpaceToContinue();
                             break;
                     }
                     break;
@@ -55,15 +54,11 @@ class Program
         } while (quitCheck);
     }
 
-    private static void extendedRun(taskDelegate runDelegate1)
+    /*Расширенный запуск задачи. Дополнительно останавливает Run() до нажатия кнопки Space.*/
+    private static void extendedRun(int numberOfTask)
     {
-
-        //runDelegate1 += runDelegate1.Method;
-        Console.WriteLine(runDelegate1.Method.DeclaringType);
-        /*Выводит описание задачи.*/
-        //Console.WriteLine(runDelegate1.getDescription);
         /*Запускает метод Run задачи*/
-        runDelegate1();
+        taskRun[numberOfTask].Invoke();
         /*Запускает ожидание до нажатия кнопки Space*/
         EducationLibrary.PressSpaceToContinue();
     }

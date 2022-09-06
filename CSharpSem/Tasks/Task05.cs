@@ -4,17 +4,17 @@ using EducationLibraries;
 internal class Task05 : Task, IRunnableFromConsole
 {
     private static string description = "Вывод чисел от -N до N.";
-    private static int numberOfTask = 5;
+
     new internal static void Run()
     {
         Console.WriteLine(description);
 
-        int number = EducationLibrary.ReadLineWithMessage("Введите число");
+        int number = EducationLibrary.ConsoleInt("Введите число");
 
         for (int i = -number; i < number; i++)
         {
             Console.Write(i + ", ");
         }
-        Console.Write(number);
+        Console.WriteLine(number);
     }
 }

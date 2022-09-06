@@ -7,7 +7,7 @@ internal class Task08 : Task, IRunnableFromConsole
     private delegate int[] integerDelegate(int num); //Делегат, работающий с int, выводит int[]
 
     private static string description = "Вывод чётных чисел от 1 до N.";
-    private static int numberOfTask = 8;
+
     new internal static void Run()
     {
         Console.WriteLine(description);
@@ -50,7 +50,7 @@ internal class Task08 : Task, IRunnableFromConsole
     private static int[] generateEvenNumbers(int number)
     {
         /*Генерация массива для вывода*/
-        int[] evens = new int[number / 2]; // создаёт массив чётных чисел
+        var evens = new int[number / 2]; // создаёт массив чётных чисел
         int j = 0; //дополнительный индекс для внесения чисел в массив evens
         for (int i = 1; i <= number; i++) // проходит по циклу от 1 до числа
         {
