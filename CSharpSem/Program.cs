@@ -32,6 +32,11 @@ class Program
                 case true:
                     if (numberOfTask > 0 && numberOfTask <= taskRun.Length)
                         extendedRun(numberOfTask - 1);
+                    else
+                    {
+                        Console.WriteLine("Введите корректный номер задачи");
+                        EducationLibrary.PressSpaceToContinue();
+                    }
                     break;
                 case false:
                     switch (userInput)
