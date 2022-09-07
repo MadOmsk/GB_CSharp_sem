@@ -1,4 +1,4 @@
-/*Программа сообщает является ли одно введённое число квадратом другого.*/
+// Программа сообщает является ли одно введённое число квадратом другого.
 using EducationLibraries;
 
 internal class Task16 : Task, IRunnableFromConsole
@@ -9,10 +9,10 @@ internal class Task16 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number1 = EducationLibrary.ConsoleInt("Введите целое число");
-        int number2 = EducationLibrary.ConsoleInt("Введите целое число");
+        int number1 = EdInput.ConsoleInt("Введите целое число");
+        int number2 = EdInput.ConsoleInt("Введите целое число");
 
-        /*Сообщение для вывода.*/
+        // Сообщение для вывода.
         string message = "";
         if (number1 == number2 * number2)
             message = $"Число {number1} является квадратом числа {number2}";

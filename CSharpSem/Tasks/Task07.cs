@@ -1,4 +1,4 @@
-/*Вывод последней цифры трёхзначного числа.*/
+//Вывод последней цифры трёхзначного числа.
 using EducationLibraries;
 
 internal class Task07 : Task, IRunnableFromConsole
@@ -9,7 +9,7 @@ internal class Task07 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EducationLibrary.ConsoleInt("Введите трёхзначное число");
+        int number = EdInput.ConsoleInt("Введите трёхзначное число");
 
         if (number <= 999 && number >= 100)
             Console.WriteLine("Последняя цифра трёхзначного числа " + number + " - " + number % 10);

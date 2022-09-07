@@ -1,4 +1,4 @@
-/*Определение чётности числа.*/
+// Определение чётности числа.
 using EducationLibraries;
 
 internal class Task06 : Task, IRunnableFromConsole
@@ -9,9 +9,9 @@ internal class Task06 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EducationLibrary.ConsoleInt("Введите целое число");
+        int number = EdInput.ConsoleInt("Введите целое число");
 
-        /*Считаем остаток от деления на 2 и выводим результат.*/
+        // Считаем остаток от деления на 2 и выводим результат.
         if (number % 2 == 0) //
             Console.WriteLine($"Число {number} - чётное");
         else

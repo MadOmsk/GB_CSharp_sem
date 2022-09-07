@@ -1,4 +1,4 @@
-/*Сравнение двух чисел.*/
+// Сравнение двух чисел.
 using EducationLibraries;
 
 internal class Task02 : Task, IRunnableFromConsole
@@ -9,8 +9,8 @@ internal class Task02 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int firstNumber = EducationLibrary.ConsoleInt("Введите первое число");
-        int secondNumber = EducationLibrary.ConsoleInt("Введите второе число");
+        int firstNumber = EdInput.ConsoleInt("Введите первое число");
+        int secondNumber = EdInput.ConsoleInt("Введите второе число");
 
         if (firstNumber > secondNumber)//сравниваем числа и выводим результат
             Console.WriteLine(firstNumber + " > " + secondNumber);

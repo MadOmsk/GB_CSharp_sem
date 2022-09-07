@@ -1,4 +1,4 @@
-/*Программа по номеру четверти выдаёт диапазон координат X и Y.*/
+// Программа по номеру четверти выдаёт диапазон координат X и Y.
 using EducationLibraries;
 
 internal class Task18 : Task, IRunnableFromConsole
@@ -9,7 +9,7 @@ internal class Task18 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int numberOfQuarter = EducationLibrary.ConsoleInt("Введите номер четверти");
+        int numberOfQuarter = EdInput.ConsoleInt("Введите номер четверти");
 
         string message;
         switch (numberOfQuarter)

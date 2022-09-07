@@ -1,4 +1,4 @@
-/*Вывод чисел от -N до N.*/
+// Вывод чисел от -N до N.
 using EducationLibraries;
 
 internal class Task05 : Task, IRunnableFromConsole
@@ -9,7 +9,7 @@ internal class Task05 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EducationLibrary.ConsoleInt("Введите число");
+        int number = EdInput.ConsoleInt("Введите число");
 
         for (int i = -number; i < number; i++)
         {

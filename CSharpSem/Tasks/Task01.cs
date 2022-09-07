@@ -1,4 +1,4 @@
-/*Определение, является ли первое число квадратом второго.*/
+// Определение, является ли первое число квадратом второго.
 using EducationLibraries;
 
 internal class Task01 : Task, IRunnableFromConsole
@@ -9,8 +9,8 @@ internal class Task01 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int firstNumber = EducationLibrary.ConsoleInt("Введите первое число");
-        int secondNumber = EducationLibrary.ConsoleInt("Введите второе число");
+        int firstNumber = EdInput.ConsoleInt("Введите первое число");
+        int secondNumber = EdInput.ConsoleInt("Введите второе число");
 
         if (firstNumber == secondNumber * secondNumber)
             Console.WriteLine($"Число {firstNumber} является квадратом {secondNumber}");

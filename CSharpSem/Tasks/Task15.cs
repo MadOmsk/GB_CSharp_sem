@@ -1,4 +1,4 @@
-/*Программа принимает на ввод номер дня недели и выводит является ли этот день выходным.*/
+// Программа принимает на ввод номер дня недели и выводит является ли этот день выходным.
 using EducationLibraries;
 
 internal class Task15 : Task, IRunnableFromConsole
@@ -9,9 +9,9 @@ internal class Task15 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int numberDayOfWeek = EducationLibrary.ConsoleInt("Введите номер дня недели");
+        int numberDayOfWeek = EdInput.ConsoleInt("Введите номер дня недели");
 
-        /*Сообщение для вывода после определения дня недели.*/
+        // Сообщение для вывода после определения дня недели.
         string message = "";
         switch (numberDayOfWeek)
         {

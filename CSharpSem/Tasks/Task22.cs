@@ -1,4 +1,4 @@
-/*Программа выводит таблицу квадратов от 1 до N.*/
+// Программа выводит таблицу квадратов от 1 до N.
 using EducationLibraries;
 
 internal class Task22 : Task, IRunnableFromConsole
@@ -9,7 +9,7 @@ internal class Task22 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EducationLibrary.ConsoleInt("Введите число");
+        int number = EdInput.ConsoleInt("Введите число");
 
         int[] squares = new int[number];
         for (int i = 1; i <= number; i++)

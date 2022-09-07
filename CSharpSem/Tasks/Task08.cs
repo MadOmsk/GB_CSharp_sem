@@ -1,10 +1,11 @@
-/*Вывод чётных чисел от 1 до N.*/
+// Вывод чётных чисел от 1 до N.
 
 using EducationLibraries;
 
 internal class Task08 : Task, IRunnableFromConsole
 {
-    private delegate int[] integerDelegate(int num); //Делегат, работающий с int, выводит int[]
+    // Делегат, работающий с int, выводит int[].
+    private delegate int[] integerDelegate(int num);
 
     private static string description = "Вывод чётных чисел от 1 до N.";
 
@@ -12,32 +13,38 @@ internal class Task08 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        /*Просит пользователя ввести число*/
+        // Просит пользователя ввести число.
         Console.WriteLine("Введите положительное целое число");
-        bool status = double.TryParse(Console.ReadLine(), out double inputNumber); //ввод числа, преобразование в int
+        // Ввод числа, преобразование в int.
+        bool status = double.TryParse(Console.ReadLine(), out double inputNumber);
 
-        int[] evens = checkParsedValue(generateEvenNumbers, status, inputNumber); //проверка числа, применение к нему метода generateEvenNumbers
+        // Проверка числа, применение к нему метода generateEvenNumbers.
+        int[] evens = checkParsedValue(generateEvenNumbers, status, inputNumber);
 
-        Console.WriteLine(string.Join(", ", evens)); //вывод массива
+        //Вывод массива.
+        Console.WriteLine(string.Join(", ", evens));
     }
 
-    /*Метод проверяет является ли число целым положительным, преобразовывает его в int и выполняет необходимую операцию с этим числом, имеющую на выходе int[]
-    На входе bool и double - результат double.TryParse()*/
+    // Метод проверяет является ли число целым положительным, преобразовывает его в int и выполняет необходимую операцию с этим числом, имеющую на выходе int[].
+    // На входе bool и double - результат double.TryParse().
     private static int[] checkParsedValue(integerDelegate integerDelegate1, bool status, double inputNumber)
     {
-        /*Проверяет правильно ли спарсилась строка, выводит необходимое сообщение, если не получилось целое положительное число*/
+        //Проверяет правильно ли спарсилась строка, выводит необходимое сообщение, если не получилось целое положительное число.
         try
         {
-            if (!status) //проверка является ли строка числом
+            // Проверка является ли строка числом.
+            if (!status)
                 throw new FormatException("Вы ввели не число");
-            else if ((Math.Abs((double)(int)inputNumber - inputNumber) > Double.Epsilon)) //проверка является или число целым
+            // Проверка является или число целым.
+            else if ((Math.Abs((double)(int)inputNumber - inputNumber) > Double.Epsilon))
                 throw new FormatException("Вы ввели дробное число");
-            else if ((int)inputNumber <= 0) //проверка, является ли число положительным
+            // Проверка, является ли число положительным.
+            else if ((int)inputNumber <= 0)
                 throw new FormatException("Вы ввели неположительное число");
             else
-            {
-                return integerDelegate1((int)inputNumber); //преобразовывает введённое число в целое и выполняет с ним операцию
-            }
+                // Преобразовывает введённое число в целое и выполняет с ним операцию.
+                return integerDelegate1((int)inputNumber);
+
         }
         catch (Exception e)
         {
@@ -46,17 +53,22 @@ internal class Task08 : Task, IRunnableFromConsole
         return new int[0];
     }
 
-    /*Метод выводит чётные числа в промежутке от 0 до num*/
+    // Метод выводит чётные числа в промежутке от 0 до num.
     private static int[] generateEvenNumbers(int number)
     {
-        /*Генерация массива для вывода*/
-        var evens = new int[number / 2]; // создаёт массив чётных чисел
-        int j = 0; //дополнительный индекс для внесения чисел в массив evens
-        for (int i = 1; i <= number; i++) // проходит по циклу от 1 до числа
+        // Генерация массива для вывода.
+        // Создаёт массив чётных чисел.
+        var evens = new int[number / 2];
+        // Дополнительный индекс для внесения чисел в массив evens.
+        int j = 0;
+        // Проходит по циклу от 1 до числа.
+        for (int i = 1; i <= number; i++)
         {
-            if (i % 2 == 0) //проверяет чётность индекса цикла
+            // Проверяет чётность индекса цикла.
+            if (i % 2 == 0)
             {
-                evens[j] = i; //вносит чётное число в массив evens
+                // Вносит чётное число в массив evens.
+                evens[j] = i;
                 j++;
             }
         }

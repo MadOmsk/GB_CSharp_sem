@@ -1,4 +1,4 @@
-/*Программа выводит остаток от деления одного числа на другое, либо сообщает, что одно число кратно другому.*/
+// Программа выводит остаток от деления одного числа на другое, либо сообщает, что одно число кратно другому.
 using EducationLibraries;
 
 internal class Task12 : Task, IRunnableFromConsole
@@ -9,10 +9,10 @@ internal class Task12 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int dividend = EducationLibrary.ConsoleInt("Введите целое число (делимое)");
-        int dividor = EducationLibrary.ConsoleInt("Введите целое число (делитель)");
+        int dividend = EdInput.ConsoleInt("Введите целое число (делимое)");
+        int dividor = EdInput.ConsoleInt("Введите целое число (делитель)");
 
-        /*Определение остатка от деления.*/
+        // Определение остатка от деления.
         int remainder = dividend % dividor;
         if (remainder == 0)
             Console.WriteLine($"{dividend} кратно {dividor}");

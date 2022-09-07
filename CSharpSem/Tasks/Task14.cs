@@ -1,4 +1,4 @@
-/*Программа сообщает кратно ли введённое число 7 и 23 одновременно.*/
+// Программа сообщает кратно ли введённое число 7 и 23 одновременно.
 using EducationLibraries;
 
 internal class Task14 : Task, IRunnableFromConsole
@@ -9,7 +9,7 @@ internal class Task14 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EducationLibrary.ConsoleInt("Введите целое число");
+        int number = EdInput.ConsoleInt("Введите целое число");
 
         if (number % 7 == 0 && number % 23 == 0)
             Console.WriteLine($"Число {number} кратно 7 и 23");

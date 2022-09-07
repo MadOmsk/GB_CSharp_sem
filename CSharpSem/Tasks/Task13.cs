@@ -1,4 +1,4 @@
-/*Программа выводит третью цифру введённого числа или сообщает, что её нет.*/
+// Программа выводит третью цифру введённого числа или сообщает, что её нет.
 using EducationLibraries;
 
 internal class Task13 : Task, IRunnableFromConsole
@@ -9,11 +9,11 @@ internal class Task13 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        /*Поддерживает очень большие числа.*/
-        ulong number = EducationLibrary.ConsoleUlong("Введите целое положительное число");
+        // Поддерживает очень большие числа.
+        ulong number = EdInput.ConsoleUlong("Введите целое положительное число");
         if (number > 99)
         {
-            /*Это выражение преобразовывает число в строку, затем из этой строки присваивает 3 символ переменной thirdDigit.*/
+            // Это выражение преобразовывает число в строку, затем из этой строки присваивает 3 символ переменной thirdDigit.
             char thirdDigit = number.ToString()[2];
             Console.WriteLine($"Третья цифра числа {number} - {thirdDigit}");
         }

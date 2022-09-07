@@ -1,4 +1,4 @@
-/*Вывод дней недели по номеру.*/
+// Вывод дней недели по номеру.
 using EducationLibraries;
 
 internal class Task03 : Task, IRunnableFromConsole
@@ -9,7 +9,7 @@ internal class Task03 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int numberOfDay = EducationLibrary.ConsoleInt("Введите номер дня недели");
+        int numberOfDay = EdInput.ConsoleInt("Введите номер дня недели");
 
         switch (numberOfDay)
         {

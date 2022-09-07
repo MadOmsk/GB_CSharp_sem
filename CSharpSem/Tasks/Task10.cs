@@ -1,4 +1,4 @@
-/*Программа выводит вторую цифру трёхзначного числа.*/
+// Программа выводит вторую цифру трёхзначного числа.
 using EducationLibraries;
 
 internal class Task10 : Task, IRunnableFromConsole
@@ -9,12 +9,12 @@ internal class Task10 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EducationLibrary.ConsoleInt("Введите трёхзначное число");
+        int number = EdInput.ConsoleInt("Введите трёхзначное число");
         
         if (number < 1000 && number > 99)
         {
             Console.Write(number + " -> ");
-            /*Определение второй цифры трёхзначного числа.*/
+            // Определение второй цифры трёхзначного числа.
             number = (number / 10) % 10;
             Console.WriteLine(number);
         }
