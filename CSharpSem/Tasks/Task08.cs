@@ -16,6 +16,7 @@ internal class Task08 : Task, IRunnableFromConsole
         // Просит пользователя ввести число.
         Console.WriteLine("Введите положительное целое число");
         // Ввод числа, преобразование в int.
+        string input = 
         bool status = double.TryParse(Console.ReadLine(), out double inputNumber);
 
         // Проверка числа, применение к нему метода generateEvenNumbers.
