@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationLibraries", "Educa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpSem", "CSharpSem\CSharpSem.csproj", "{7DFD606F-FB04-4E0A-88F6-9CDF39AF1D66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{0E1569F1-A4D1-49D3-A27C-D35AD9C0D143}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,5 +34,9 @@ Global
 		{7DFD606F-FB04-4E0A-88F6-9CDF39AF1D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DFD606F-FB04-4E0A-88F6-9CDF39AF1D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DFD606F-FB04-4E0A-88F6-9CDF39AF1D66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E1569F1-A4D1-49D3-A27C-D35AD9C0D143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1569F1-A4D1-49D3-A27C-D35AD9C0D143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1569F1-A4D1-49D3-A27C-D35AD9C0D143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1569F1-A4D1-49D3-A27C-D35AD9C0D143}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
