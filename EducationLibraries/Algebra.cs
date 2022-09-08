@@ -16,7 +16,7 @@ public static class Algebra
         // Переменные, отображающие, является ли число натуральным, целым, рациональным, соответственно.
         bool isN = false, isZ = false, isQ = true;
         // Определяет целость числа с заданной точностью.
-        if (Math.Abs((int)Softering(number) - number) < precision)
+        if (Math.Abs((long)Softering(number) - number) < precision)
         {
             isZ = true;
             // Определяет натуральность числа.
@@ -39,23 +39,23 @@ public static class Algebra
     }
 
     // Преобразовывает рациональное число в целое. Если не получается, то бросает исключение.
-    public static int RationalToInteger(double number)
+    public static long RationalToInteger(double number)
     {
         if (SetOfNumber(number, Sets.Z))
-            return (int)Softering(number);
+            return (long)Softering(number);
         else throw new ArithmeticException("Число не является целым");
     }
 
     // Преобразовывает целое число в натуральное. Если не получается, то бросает исключение.
-    public static int IntegerToNatural(int number)
+    public static uint IntegerToNatural(long number)
     {
         if (SetOfNumber(number, Sets.N))
-            return number;
+            return (uint)number;
         else throw new ArithmeticException("Число не является натуральным");
     }
 
     // Преобразовывает рациональное число в натуральное. Если не получается, то бросает исключение.
-    public static int RationalToNatural(double number)
+    public static uint RationalToNatural(double number)
     {
         return IntegerToNatural(RationalToInteger(number));
     }
