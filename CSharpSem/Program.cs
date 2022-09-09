@@ -9,7 +9,9 @@ class Program
                                     Task06.Run, Task07.Run, Task08.Run, Task09.Run, Task10.Run,
                                     Task11.Run, Task12.Run, Task13.Run, Task14.Run, Task15.Run,
                                     Task16.Run, Task17.Run, Task18.Run, Task19.Run, Task20.Run,
-                                    Task21.Run, Task22.Run, Task23.Run};
+                                    Task21.Run, Task22.Run, Task23.Run, Task24.Run, Task25.Run,
+                                    Task26.Run, Task27.Run, Task28.Run, Task29.Run, Task30.Run,
+                                    TaskX01.Run };
 
     static void Main(string[] args)
     {

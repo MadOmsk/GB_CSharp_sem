@@ -11,11 +11,17 @@ internal class Task24 : Task, IRunnableFromConsole
 
         int number = EdInput.ConsoleInt("Введите натуральное число");
 
-        int[] cubes = new int[number];
-        for (int i = 1; i <= number; i++)
+        System.Console.WriteLine($"Сумма чисел от 1 до {number} равна {s_getSum(number)}");
+
+    }
+    private static int s_getSum(int input)
+    {
+        int result = 0;
+        for (int i = 1; i <= input; i++)
         {
-            cubes[i - 1] = i * i * i;
+            result += i;
         }
-        Console.WriteLine(String.Join(", ", cubes));
+        return result;
     }
 }
+
