@@ -11,7 +11,7 @@ internal class Task29 : Task, IRunnableFromConsole
 
         var array = new int[8];
         for (int i = 0; i < array.Length; i++)
-            array[i] = EdInput.ConsoleInt($"Введите число {i + 1}");
+            array[i] = (int)EdInput.InputConsoleInteger($"Введите натуральное число {i + 1}", Algebra.Sets.N);
 
         Console.WriteLine(String.Join(", ", array));
     }

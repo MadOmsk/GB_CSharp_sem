@@ -1,58 +1,55 @@
 // Здесь вся геометрия.
 
-// Класс точка, содержащий 2 координаты.
+ /// <summary>Класс точка, содержащий 2 координаты.</summary>
 public class Point2D
 {
-    // Создаёт объект по двум координатам.
-    public Point2D(int x, int y)
+    /// <summary>Координаты.</summary>
+    public double X, Y;
+
+    /// <summary>Создаёт объект по двум координатам.</summary>
+    public Point2D(double x, double y)
     {
         X = x;
         Y = y;
     }
 
-    // Создаёт объект из строки.
-    public Point2D(string input)
+    /// <summary>Создаёт объект из массива double.</summary>
+    public Point2D(double[] xy)
     {
-        string[] pointString = input.Split(' ');
-        X = int.Parse(pointString[0]);
-        Y = int.Parse(pointString[1]);
+        X = xy[0];
+        Y = xy[1];
     }
 
-    // Координаты.
-    public int X, Y;
-
-    // Расчитывает расстояние между двумя точками на декартовой плоскости, возвращает double.
+    /// <summary>Расчитывает расстояние между двумя точками на декартовой плоскости, возвращает double.</summary>
     public static double CalculateDistance(Point2D a, Point2D b)
     {
         return Math.Sqrt(Math.Pow(b.X - a.X, 2) + Math.Pow(b.Y - a.Y, 2));
     }
 }
 
-// Класс точка, содержащий 3 координаты.
+/// <summary>Класс точка, содержащий 3 координаты.</summary>
 public class Point3D
 {
-    // Создаёт объект по трём координатам.
-    public Point3D(int x, int y, int z)
+    /// <summary>Координаты.</summary>
+    public double X, Y, Z;
+
+    /// <summary>Создаёт объект по трём координатам.</summary>
+    public Point3D(double x, double y, double z)
     {
         X = x;
         Y = y;
         Z = z;
     }
 
-    // Создаёт объект из строки.
-    public Point3D(string input)
+    /// <summary>Создаёт объект из массива double.</summary>
+    public Point3D(double[] xyz)
     {
-        string[] pointString = input.Split(' ');
-        var inputInt = new int[3];
-        X = int.Parse(pointString[0]);
-        Y = int.Parse(pointString[1]);
-        Z = int.Parse(pointString[2]);
+        X = xyz[0];
+        Y = xyz[1];
+        Z = xyz[2];
     }
 
-    // Координаты.
-    public int X, Y, Z;
-
-    // Расчитывает расстояние между двумя точками на декартовом пространстве, возвращает double.
+    /// <summary>Расчитывает расстояние между двумя точками на декартовом пространстве, возвращает double.</summary>
     public static double CalculateDistance(Point3D a, Point3D b)
     {
         return Math.Sqrt(Math.Pow(b.X - a.X, 2) + Math.Pow(b.Y - a.Y, 2) + Math.Pow(b.Z - a.Z, 2));

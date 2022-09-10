@@ -9,12 +9,9 @@ internal class Task20 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
         
-        Console.WriteLine("Введите координаты X Y первой точки (через пробел)");
-        // Используется класс Point2D из библиотеки.
-        var pointA = new Point2D(Console.ReadLine()!);
-
-        Console.WriteLine("Введите координаты X Y второй точки (через пробел)");
-        var pointB = new Point2D(Console.ReadLine()!);
+        // Используется класс Point2D из моей библиотеки.
+        var pointA = new Point2D(EdInput.InputConsoleDouble("Введите координаты X Y первой точки (через пробел)", 2));
+        var pointB = new Point2D(EdInput.InputConsoleDouble("Введите координаты X Y второй точки (через пробел)", 2));
 
         double distance = Point2D.CalculateDistance(pointA, pointB);
         Console.WriteLine($"Расстояние между точками равно {distance:F2}");

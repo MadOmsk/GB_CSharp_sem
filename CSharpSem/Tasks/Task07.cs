@@ -9,11 +9,17 @@ internal class Task07 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.ConsoleInt("Введите трёхзначное число");
-
-        if (number <= 999 && number >= 100)
-            Console.WriteLine("Последняя цифра трёхзначного числа " + number + " - " + number % 10);
-        else
-            Console.WriteLine("Ваше число не трёхзначное");
+        bool quitCheck = true;
+        while (quitCheck)
+        {
+            int number = (int)EdInput.InputConsoleInteger("Введите трёхзначное число", Algebra.Sets.N);
+            if (number <= 999 && number >= 100)
+            {
+                Console.WriteLine("Последняя цифра трёхзначного числа " + number + " - " + number % 10);
+                quitCheck = false;
+            }
+            else
+                Console.WriteLine("Ваше число не трёхзначное");
+        }
     }
 }

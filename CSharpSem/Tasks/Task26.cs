@@ -9,16 +9,20 @@ internal class Task26 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.ConsoleInt("Введите натуральное число");
+        long number = EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
-        // Число разрядов.
+        System.Console.WriteLine($"Количество разрядов числа {number} - {s_getDepth(number)}");
+    }
+
+    // Метод считает количество разрядов числа.
+    private static int s_getDepth(long number)
+    {
         int depth = 0;
         while (number > 0)
         {
             number /= 10;
             depth++;
         }
-
-        System.Console.WriteLine($"Число количество числа {number} - {depth}");
+        return depth;
     }
 }

@@ -9,7 +9,7 @@ internal class Task23 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.ConsoleInt("Введите натуральное число");
+        int number = (int)EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
         int[] cubes = new int[number];
         for (int i = 1; i <= number; i++)

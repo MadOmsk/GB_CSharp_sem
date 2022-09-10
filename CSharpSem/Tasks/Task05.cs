@@ -9,12 +9,10 @@ internal class Task05 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.ConsoleInt("Введите число");
+        int number = (int)EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
         for (int i = -number; i < number; i++)
-        {
             Console.Write(i + ", ");
-        }
         Console.WriteLine(number);
     }
 }

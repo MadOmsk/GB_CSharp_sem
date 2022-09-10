@@ -9,8 +9,8 @@ internal class Task13 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        // Поддерживает очень большие числа.
-        ulong number = EdInput.ConsoleUlong("Введите целое положительное число");
+        long number = EdInput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
+
         if (number > 99)
         {
             // Это выражение преобразовывает число в строку, затем из этой строки присваивает 3 символ переменной thirdDigit.

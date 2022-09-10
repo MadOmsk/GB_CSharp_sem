@@ -36,7 +36,7 @@ class Program
                     if (numberOfTask > 0 && numberOfTask <= taskRun.Length)
                         extendedRun(numberOfTask - 1);
                     else
-                    {  
+                    {
                         Console.WriteLine("Введите корректный номер задачи");
                         EdInput.PressSpaceToContinue();
                     }
@@ -76,5 +76,7 @@ class Program
     {
         Console.WriteLine("Введите q для выхода");
         Console.WriteLine("Введите номер задачи для выполнения задачи");
+        Console.WriteLine("Используйте десятичный разделитель, установленный системой. Скорее всего у Вас ',', либо '.'");
+        EdInput.PressSpaceToContinue();
     }
 }

@@ -9,14 +9,15 @@ internal class Task24 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.ConsoleInt("Введите натуральное число");
+        int number = (int)EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
         System.Console.WriteLine($"Сумма чисел от 1 до {number} равна {s_getSum(number)}");
-
     }
-    private static int s_getSum(int input)
+
+    // Метод считает сумму чисел от 1 до input
+    private static long s_getSum(int input)
     {
-        int result = 0;
+        long result = 0;
         for (int i = 1; i <= input; i++)
         {
             result += i;

@@ -9,11 +9,12 @@ internal class Task28 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.ConsoleInt("Введите натуральное число");
+        int number = (int)EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
         System.Console.WriteLine($"Произведение чисел от 1 до {number} равно {s_getProduct(number)}");
-
     }
+
+    // Считает факториал.
     private static long s_getProduct(int input)
     {
         long result = 1;

@@ -9,19 +9,16 @@ internal class Task17 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        Console.WriteLine("Введите координаты X Y");
-        string xy = Console.ReadLine()!;
-        string[] parts = xy.Split(' ');
-        int x = int.Parse(parts[0]);
-        int y = int.Parse(parts[1]);
+        double[] xy = EdInput.InputConsoleDouble("Введите координаты X Y (через пробел)", 2);
+        var point = new Point2D(xy);
 
-        if (x > 0 && y > 0)
+        if (point.X > 0 && point.Y > 0)
             Console.WriteLine("1-я четверть");
-        else if (x < 0 && y > 0)
+        else if (point.X < 0 && point.Y > 0)
             Console.WriteLine("2-я четверть");
-        else if (x < 0 && y < 0)
+        else if (point.X < 0 && point.Y < 0)
             Console.WriteLine("3-я четверть");
-        else if (x > 0 && y < 0)
+        else if (point.X > 0 && point.Y < 0)
             Console.WriteLine("4-я четверть");
         else
             Console.WriteLine("Точка находится на оси");
