@@ -13,7 +13,7 @@ internal class Task19 : Task, IRunnableFromConsole
         bool quitCheck = true;
         while (quitCheck)
         {
-            int number = (int)EdInput.InputConsoleInteger("Введите пятизначное число", Algebra.Sets.N);
+            int number = EdInput.InputConsoleInteger("Введите пятизначное число", Algebra.Sets.N);
 
             if (number >= 10000 && number < 100000)
             {

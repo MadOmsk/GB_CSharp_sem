@@ -2,15 +2,6 @@
 
 public static class EdInput
 {
-
-    // УСТАРЕВАЕТ
-    // Метод выводит сообщение, читает строку со ввода терминала и преобразовывает её в int.
-    public static int ConsoleInt(string message)
-    {
-        System.Console.WriteLine(message);
-        return int.Parse(System.Console.ReadLine()!);
-    }
-
     /// <summary>Метод выводит сообщение, читает строку со ввода терминала и преобразовывает её в массив double.
     /// message - сообщение для вывода.
     /// n - количество ожидаемых аргументов.
@@ -53,7 +44,7 @@ public static class EdInput
     /// <summary>Метод выводит сообщение, читает строку со ввода терминала и преобразовывает её в целое или натуральное число (long).
     /// message - сообщение для вывода.
     /// set - множество: целые или натуральные числа.</summary>
-    public static long[] InputConsoleInteger(string message, int n, char separator, Algebra.Sets set)
+    public static int[] InputConsoleInteger(string message, int n, char separator, Algebra.Sets set)
     {
         // Выводит сообщение.
         Console.WriteLine(message);
@@ -63,7 +54,7 @@ public static class EdInput
         {
             try
             {
-                long[] result = StringToIntegers(Console.ReadLine()!, n, separator, set);
+                int[] result = StringToIntegers(Console.ReadLine()!, n, separator, set);
                 return result;
             }
             catch (FormatException e)
@@ -76,13 +67,13 @@ public static class EdInput
 
     /// <summary>Метод выводит сообщение, читает строку со ввода терминала и преобразовывает её в long.
     /// Вызывает метод InputConsoleInteger с n = 1.</summary>
-    public static long InputConsoleInteger(string message, Algebra.Sets set)
+    public static int InputConsoleInteger(string message, Algebra.Sets set)
     {
         return InputConsoleInteger(message, 1, set)[0];
     }
 
     /// <summary>Вызывает метод InputConsoleInteger с разделителем пробел.</summary>
-    public static long[] InputConsoleInteger(string message, int n, Algebra.Sets set)
+    public static int[] InputConsoleInteger(string message, int n, Algebra.Sets set)
     {
         return InputConsoleInteger(message, n, ' ', set);
     }
@@ -120,13 +111,13 @@ public static class EdInput
     /// n - ожидаемое число аргументов.
     /// separator - разделитель строки.
     /// set - множество: целые или натуральные числа.</summary>
-    public static long[] StringToIntegers(string input, int n, char separator, Algebra.Sets set)
+    public static int[] StringToIntegers(string input, int n, char separator, Algebra.Sets set)
     {
         // Вызывает метод StringToDoubles с теми же параметрами, сохраняет результат во временый массив.
         double[] intemediateDoubles = StringToDoubles(input, n, separator);
 
         // Результат для вывода.
-        var result = new long[n];
+        var result = new int[n];
         // Переменная, которая показывает удалось преобразование или нет.
         bool status = true;
         // Пробует преобразовать каждый член intemediateDoubles в нужное число - элемент массива result.

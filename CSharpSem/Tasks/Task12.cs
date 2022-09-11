@@ -9,11 +9,11 @@ internal class Task12 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        long dividend = EdInput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
-        long dividor = EdInput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
+        int dividend = EdInput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
+        int dividor = EdInput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
 
         // Определение остатка от деления.
-        long remainder = dividend % dividor;
+        int remainder = dividend % dividor;
         if (remainder == 0)
             Console.WriteLine($"{dividend} кратно {dividor}");
         else

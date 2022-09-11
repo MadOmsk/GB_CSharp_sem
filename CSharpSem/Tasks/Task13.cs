@@ -9,7 +9,7 @@ internal class Task13 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        long number = EdInput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
+        int number = EdInput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
 
         if (number > 99)
         {

@@ -9,8 +9,8 @@ internal class Task16 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        long number1 = EdInput.InputConsoleInteger("Введите первое число (целое)", Algebra.Sets.Z);
-        long number2 = EdInput.InputConsoleInteger("Введите второе число (целое)", Algebra.Sets.Z);
+        int number1 = EdInput.InputConsoleInteger("Введите первое число (целое)", Algebra.Sets.Z);
+        int number2 = EdInput.InputConsoleInteger("Введите второе число (целое)", Algebra.Sets.Z);
 
         // Сообщение для вывода.
         string message = "";

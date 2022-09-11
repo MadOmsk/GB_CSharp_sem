@@ -9,8 +9,8 @@ internal class Task01 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        long firstNumber = EdInput.InputConsoleInteger("Введите первое число (целое)", Algebra.Sets.Z);
-        long secondNumber = EdInput.InputConsoleInteger("Введите второе число (целое)", Algebra.Sets.Z);
+        int firstNumber = EdInput.InputConsoleInteger("Введите первое число (целое)", Algebra.Sets.Z);
+        int secondNumber = EdInput.InputConsoleInteger("Введите второе число (целое)", Algebra.Sets.Z);
 
         if (firstNumber == secondNumber * secondNumber)
             Console.WriteLine($"Число {firstNumber} является квадратом {secondNumber}");

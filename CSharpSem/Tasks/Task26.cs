@@ -9,13 +9,13 @@ internal class Task26 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        long number = EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
+        int number = EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
         System.Console.WriteLine($"Количество разрядов числа {number} - {s_getDepth(number)}");
     }
 
     // Метод считает количество разрядов числа.
-    private static int s_getDepth(long number)
+    private static int s_getDepth(int number)
     {
         int depth = 0;
         while (number > 0)

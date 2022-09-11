@@ -10,7 +10,7 @@ internal class Task25 : Task, IRunnableFromConsole
         Console.WriteLine(description);
 
         double baseOfExponentiation = EdInput.InputConsoleDouble("Введите число (основание)");
-        int degree = (int)EdInput.InputConsoleInteger("Введите натуральное число (показатель)", Algebra.Sets.N);
+        int degree = EdInput.InputConsoleInteger("Введите натуральное число (показатель)", Algebra.Sets.N);
 
         Console.WriteLine($"{baseOfExponentiation} в степени {degree} равно {s_pow(baseOfExponentiation, degree)}");
     }

@@ -9,7 +9,7 @@ internal class Task22 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = (int)EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
+        int number = EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
         int[] squares = new int[number];
         for (int i = 1; i <= number; i++)

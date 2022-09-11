@@ -13,7 +13,7 @@ internal class Task15 : Task, IRunnableFromConsole
         bool quitCheck = true;
         while (quitCheck)
         {
-            int numberDayOfWeek = (int)EdInput.InputConsoleInteger("Введите номер дня недели", Algebra.Sets.N);
+            int numberDayOfWeek = EdInput.InputConsoleInteger("Введите номер дня недели", Algebra.Sets.N);
             quitCheck = false;
 
             // Сообщение для вывода после определения дня недели.

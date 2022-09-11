@@ -7,7 +7,7 @@ public static class Algebra
     public enum Sets { N, Z, Q };
 
     // Точность сравнения чисел.
-    private static double precision = 1E-14;
+    private static double precision = 1E-9;
     private static int precisionLog = (int)Math.Log(precision, 0.1);
 
     /// <summary>Метод принимает на ввод double и set (член enum Sets - множества чисел) 
@@ -18,7 +18,7 @@ public static class Algebra
         // Переменные, отображающие, является ли число натуральным, целым, рациональным, соответственно.
         bool isN = false, isZ = false, isQ = true;
         // Определяет целость числа с заданной точностью.
-        if (Math.Abs((long)Softering(number) - number) < precision)
+        if (Math.Abs((int)Softering(number) - number) < precision)
         {
             isZ = true;
             // Определяет натуральность числа.
@@ -39,23 +39,24 @@ public static class Algebra
                 return false;
         }
     }
+
     // УПРОСТИТЬ КОД
     /// <summary>Преобразовывает double в целое или натуральное число. Если не получается, то бросает исключение.
     /// number - число для преобразования.
     /// set - множество: целые или натуральные числа. Если указано недопустимое множество, то бросает исключение.
     /// Отбрасывает погрешность при вычислении с double.</summary>
-    public static long DoubleToInteger(double number, Sets set)
+    public static int DoubleToInteger(double number, Sets set)
     {
         // Проверка условия допустимого множества.
         if (set != Sets.N && set != Sets.Z)
         {
             System.Console.WriteLine(set);
-            throw new Exception("Invalid set. Use valid set: Sets.Z or Sets.N");
+            throw new Exception("Invalid set. Use valid sets: Sets.Z or Sets.N");
         }
 
         // Проверка, соответствует ли число указанному множеству. 
         if (SetOfNumber(number, set))
-            return (long)Softering(number);
+            return (int)Softering(number);
         else if (set == Sets.N)
             throw new ArithmeticException("Число не является натуральным.");
         else if (set == Sets.Z)
