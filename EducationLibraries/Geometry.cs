@@ -1,6 +1,6 @@
 // Здесь вся геометрия.
 
- /// <summary>Класс точка, содержащий 2 координаты.</summary>
+/// <summary>Класс точка, содержащий 2 координаты.</summary>
 public class Point2D
 {
     /// <summary>Координаты.</summary>
@@ -26,6 +26,7 @@ public class Point2D
         return Math.Sqrt(Math.Pow(b.X - a.X, 2) + Math.Pow(b.Y - a.Y, 2));
     }
 }
+
 
 /// <summary>Класс точка, содержащий 3 координаты.</summary>
 public class Point3D
