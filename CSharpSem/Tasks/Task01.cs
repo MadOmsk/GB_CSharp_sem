@@ -1,6 +1,8 @@
 // Определение, является ли первое число квадратом второго.
 using EducationLibraries;
 
+namespace Task1;
+
 internal class Task01 : Task, IRunnableFromConsole
 {
     private static string description = "Определение, является ли первое число квадратом второго.";
