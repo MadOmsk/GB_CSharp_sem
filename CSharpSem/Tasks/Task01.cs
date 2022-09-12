@@ -1,11 +1,11 @@
 // Определение, является ли первое число квадратом второго.
 using EducationLibraries;
 
-internal class Task01 : Task, IRunnableFromConsole
+internal class Task01 : Task
 {
     private static string description = "Определение, является ли первое число квадратом второго.";
     
-    new internal static void Run()
+    new internal void Run()
     {
         Console.WriteLine(description);
 

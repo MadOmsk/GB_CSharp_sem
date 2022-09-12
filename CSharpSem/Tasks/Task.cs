@@ -2,5 +2,10 @@ using EducationLibraries;
 // Родительский класс для всех задач
 internal abstract class Task : IRunnableFromConsole
 {
-    internal static void Run() { }
+    private static string description = "";
+
+
+    internal void Run() { 
+        System.Console.WriteLine(description);
+    }
 }

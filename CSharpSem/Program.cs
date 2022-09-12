@@ -2,19 +2,40 @@
 class Program
 {
     // Делегат для выполнения методов наследников класса Task.
-    private delegate void taskDelegate();
+    private delegate void TaskDelegate();
+
+
 
     // Массив методов Run.
-    static taskDelegate[] taskRun = { Task01.Run, Task02.Run, Task03.Run, Task04.Run, Task05.Run,
+    /*static taskDelegate[] taskRun = { Task00.Run, Task01.Run, Task02.Run };/*, Task03.Run, Task04.Run, Task05.Run,
                                     Task06.Run, Task07.Run, Task08.Run, Task09.Run, Task10.Run,
                                     Task11.Run, Task12.Run, Task13.Run, Task14.Run, Task15.Run,
                                     Task16.Run, Task17.Run, Task18.Run, Task19.Run, Task20.Run,
                                     Task21.Run, Task22.Run, Task23.Run, Task24.Run, Task25.Run,
                                     Task26.Run, Task27.Run, Task28.Run, Task29.Run, Task30.Run,
-                                    TaskX01.Run };
+                                    TaskX01.Run };*/
 
     static void Main(string[] args)
     {
+
+        List<Task> taskList = new List<Task>();
+
+        taskList.Add(new Task00());
+        taskList.Add(new Task01());
+        taskList.Add(new Task02());
+
+        List<TaskDelegate> taskRunList = new List<TaskDelegate>();
+
+        foreach (var task in taskList)
+        {
+            taskRunList.Add(task.Run);
+        }
+
+        TaskDelegate[] taskRunArray = taskRunList.ToArray();
+
+        System.Console.WriteLine(String.Join(' ', taskRunArray.ToString()));
+
+
         // Переменная для выхода из бесконечного цикла.
         bool quitCheck = true;
 
@@ -22,7 +43,7 @@ class Program
         do
         {
 
-            Console.Clear();
+            // Console.Clear();
             Console.WriteLine("Введите номер задачи или q для выхода");
             string userInput = Console.ReadLine()!;
             // Проверяет введены цифры или буквы.
@@ -33,8 +54,8 @@ class Program
             switch (isUserInputInt)
             {
                 case true:
-                    if (numberOfTask > 0 && numberOfTask <= taskRun.Length)
-                        extendedRun(numberOfTask - 1);
+                    if (numberOfTask > 0 && numberOfTask <= taskRunArray.Length)
+                        extendedRun(taskRunArray, numberOfTask);
                     else
                     {
                         Console.WriteLine("Введите корректный номер задачи");
@@ -63,10 +84,10 @@ class Program
     }
 
     // Расширенный запуск задачи. Дополнительно останавливает Run() до нажатия кнопки Space.
-    private static void extendedRun(int numberOfTask)
+    private static void extendedRun(TaskDelegate[] taskDelegate, int numberOfTask)
     {
         // Запускает метод Run задачи.
-        taskRun[numberOfTask].Invoke();
+        taskDelegate[numberOfTask].Invoke();
         // Запускает ожидание до нажатия кнопки Space.
         EdInput.PressSpaceToContinue();
     }
