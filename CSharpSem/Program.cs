@@ -1,4 +1,5 @@
 ﻿using EducationLibraries;
+using System.Reflection;
 class Program
 {
     // Делегат для выполнения методов наследников класса Task.
@@ -17,24 +18,19 @@ class Program
 
     static void Main(string[] args)
     {
+        Assembly assembly = Assembly.GetExecutingAssembly();
+        List<Type> types = new List<Type>();
+        foreach (Type type in assembly.GetTypes())
+            if (type.Namespace == "Task1")
+                types.Add(type);
 
-        List<Task> taskList = new List<Task>();
-
-        taskList.Add(new Task00());
-        taskList.Add(new Task01());
-        taskList.Add(new Task02());
-
-        List<TaskDelegate> taskRunList = new List<TaskDelegate>();
-
-        foreach (var task in taskList)
+        foreach (var item in types)
         {
-            taskRunList.Add(task.Run);
+            System.Console.WriteLine(item);
         }
-
-        TaskDelegate[] taskRunArray = taskRunList.ToArray();
-
-        System.Console.WriteLine(String.Join(' ', taskRunArray.ToString()));
-
+        var typesA = types.ToArray();
+        (new Task1.Task01()).Run();
+        (new typesA[1]).Run();
 
         // Переменная для выхода из бесконечного цикла.
         bool quitCheck = true;
@@ -54,13 +50,13 @@ class Program
             switch (isUserInputInt)
             {
                 case true:
-                    if (numberOfTask > 0 && numberOfTask <= taskRunArray.Length)
-                        extendedRun(taskRunArray, numberOfTask);
+                    /*if (numberOfTask > 0 && numberOfTask <= taskDelegates.Length)
+                        extendedRun(taskDelegates, numberOfTask);
                     else
                     {
                         Console.WriteLine("Введите корректный номер задачи");
                         EdInput.PressSpaceToContinue();
-                    }
+                    }*/
                     break;
                 case false:
                     switch (userInput)

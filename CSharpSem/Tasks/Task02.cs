@@ -1,6 +1,8 @@
 // Сравнение двух чисел.
 using EducationLibraries;
 
+namespace Task1;
+
 internal class Task02 : Task
 {
     private static string description = "Сравнение двух чисел.";
