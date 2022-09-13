@@ -12,7 +12,7 @@ internal class Task03 : Task, IRunnableFromConsole
         bool quitCheck = true;
         while (quitCheck)
         {
-            int numberOfDay = EdInput.InputConsoleInteger("Введите номер дня недели", Algebra.Sets.N);
+            int numberOfDay = EdInputOutput.InputConsoleInteger("Введите номер дня недели", Algebra.Sets.N);
             quitCheck = false;
             switch (numberOfDay)
             {

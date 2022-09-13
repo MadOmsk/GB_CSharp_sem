@@ -11,7 +11,7 @@ internal class Task08 : Task, IRunnableFromConsole
         Console.WriteLine(description);
 
         // Принимает на ввод число.
-        int number = EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
+        int number = EdInputOutput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
   
         // Применение к числу метода generateEvenNumbers.
         int[] evens = s_generateEvenNumbers(number);

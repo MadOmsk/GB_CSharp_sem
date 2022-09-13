@@ -9,7 +9,7 @@ internal class Task27 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
+        int number = EdInputOutput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
         Console.WriteLine($"Сумма цифр числа {number} равна {s_sumOfArray(s_getDigits(number))}");
     }

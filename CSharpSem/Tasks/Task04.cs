@@ -10,9 +10,9 @@ internal class Task04 : Task, IRunnableFromConsole
         Console.WriteLine(description);
 
         var numbers = new double[3];
-        numbers[0] = EdInput.InputConsoleDouble("Введите первое число");
-        numbers[1] = EdInput.InputConsoleDouble("Введите второе число");
-        numbers[2] = EdInput.InputConsoleDouble("Введите третье число");
+        numbers[0] = EdInputOutput.InputConsoleDouble("Введите первое число");
+        numbers[1] = EdInputOutput.InputConsoleDouble("Введите второе число");
+        numbers[2] = EdInputOutput.InputConsoleDouble("Введите третье число");
 
         // Cоздаём переменную max, присваиваем ему значение первого числа.
         double max = numbers[0];

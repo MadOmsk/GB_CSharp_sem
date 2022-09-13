@@ -1,6 +1,6 @@
 ﻿namespace EducationLibraries;
 
-public static class EdInput
+public static class EdInputOutput
 {
     /// <summary>Метод выводит сообщение, читает строку со ввода терминала и преобразовывает её в массив double.
     /// message - сообщение для вывода.
@@ -144,5 +144,29 @@ public static class EdInput
     {
         Console.WriteLine("Нажмите Space, чтобы продолжить");
         while (Console.ReadKey().Key != ConsoleKey.Spacebar) { }
+    }
+
+    // Вывод массива int с разделителем
+    public static void ConsolePrintWithSeparator(int[] array, string separator)
+    {
+        Console.WriteLine(String.Join(separator, array));
+    }
+
+    // Вывод массива int с разделителем " "
+    public static void ConsolePrintWithSeparator(int[] array)
+    {
+        ConsolePrintWithSeparator(array, " ");
+    }
+
+    // Вывод массива double с разделителем
+    public static void ConsolePrintWithSeparator(double[] array, string separator)
+    {
+        Console.WriteLine(String.Join(separator, array));
+    }
+
+    // Вывод массива double с разделителем " "
+    public static void ConsolePrintWithSeparator(double[] array)
+    {
+        ConsolePrintWithSeparator(array, " ");
     }
 }

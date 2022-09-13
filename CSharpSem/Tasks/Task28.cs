@@ -9,7 +9,7 @@ internal class Task28 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
+        int number = EdInputOutput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
         System.Console.WriteLine($"Произведение чисел от 1 до {number} равно {s_getFactorial(number)}");
     }

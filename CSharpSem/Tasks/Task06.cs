@@ -9,7 +9,7 @@ internal class Task06 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.InputConsoleInteger("Введите целое число", Algebra.Sets.Z);
+        int number = EdInputOutput.InputConsoleInteger("Введите целое число", Algebra.Sets.Z);
 
         // Считаем остаток от деления на 2 и выводим результат.
         if (number % 2 == 0) //

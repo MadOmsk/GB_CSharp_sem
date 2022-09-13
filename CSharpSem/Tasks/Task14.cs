@@ -9,7 +9,7 @@ internal class Task14 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
+        int number = EdInputOutput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
         // 7 * 23 = 161.
         if (number % 7 == 0 && number % 23 == 0)

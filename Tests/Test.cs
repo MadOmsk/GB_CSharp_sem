@@ -68,7 +68,7 @@ void test2(double a)
 // Test InputConsoleDouble.
 void test3()
 {
-    double output = EdInput.InputConsoleDouble("1 2 3");
+    double output = EdInputOutput.InputConsoleDouble("1 2 3");
     System.Console.WriteLine(String.Join(" - ", output));
 }
 
@@ -77,7 +77,7 @@ void test4(string a, int n)
 {
     try
     {
-        double[] output = EdInput.StringToDoubles(a, n, ' ');
+        double[] output = EdInputOutput.StringToDoubles(a, n, ' ');
         System.Console.WriteLine($"{a} -> {String.Join(" ", output)}");
     }
     catch (FormatException e)
@@ -93,7 +93,7 @@ void test5(string a, int n)
 {
     try
     {
-        int[] output = EdInput.StringToIntegers(a, n, ' ', Algebra.Sets.N);
+        int[] output = EdInputOutput.StringToIntegers(a, n, ' ', Algebra.Sets.N);
         System.Console.WriteLine($"{a} -> {String.Join(" ", output)}");
     }
     catch (FormatException e)
@@ -110,14 +110,14 @@ void test5(string a, int n)
 // Test InputConsoleInteger с 4 аргументами.
 void test6()
 {
-    int[] output = EdInput.InputConsoleInteger("4 числа на ввод", 4, ' ', Algebra.Sets.N);
+    int[] output = EdInputOutput.InputConsoleInteger("4 числа на ввод", 4, ' ', Algebra.Sets.N);
     System.Console.WriteLine(String.Join(" - ", output));
 }
 
 // Test InputConsoleInteger на 1 число
 void test7()
 {
-    long output = EdInput.InputConsoleInteger("Введите число", Algebra.Sets.N);
+    long output = EdInputOutput.InputConsoleInteger("Введите число", Algebra.Sets.N);
     System.Console.WriteLine(output);
 }
 

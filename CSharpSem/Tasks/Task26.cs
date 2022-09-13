@@ -9,7 +9,7 @@ internal class Task26 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int number = EdInput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
+        int number = EdInputOutput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
         System.Console.WriteLine($"Количество разрядов числа {number} - {s_getDepth(number)}");
     }

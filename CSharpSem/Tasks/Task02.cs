@@ -9,8 +9,8 @@ internal class Task02 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        double firstNumber = EdInput.InputConsoleDouble("Введите первое число");
-        double secondNumber = EdInput.InputConsoleDouble("Введите второе число");
+        double firstNumber = EdInputOutput.InputConsoleDouble("Введите первое число");
+        double secondNumber = EdInputOutput.InputConsoleDouble("Введите второе число");
 
         // Сравнивает числа и выводит результат.
         if (firstNumber > secondNumber)

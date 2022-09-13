@@ -7,7 +7,7 @@ public interface IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        EdInput.PressSpaceToContinue();
+        EdInputOutput.PressSpaceToContinue();
     }
     // Описание что делает класс, оно же выводится как сообщение перед выполнением.
     private static string? description { get; }

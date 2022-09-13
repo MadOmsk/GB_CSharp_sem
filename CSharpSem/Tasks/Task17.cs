@@ -9,7 +9,7 @@ internal class Task17 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        double[] xy = EdInput.InputConsoleDouble("Введите координаты X Y (через пробел)", 2);
+        double[] xy = EdInputOutput.InputConsoleDouble("Введите координаты X Y (через пробел)", 2);
         var point = new Point2D(xy);
 
         if (point.X > 0 && point.Y > 0)

@@ -9,8 +9,8 @@ internal class Task12 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int dividend = EdInput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
-        int dividor = EdInput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
+        int dividend = EdInputOutput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
+        int dividor = EdInputOutput.InputConsoleInteger("Введите натуральное число (делимое)", Algebra.Sets.N);
 
         // Определение остатка от деления.
         int remainder = dividend % dividor;

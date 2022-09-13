@@ -9,7 +9,7 @@ internal class Task18 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        int numberOfQuarter = EdInput.InputConsoleInteger("Введите номер четверти", Algebra.Sets.N);
+        int numberOfQuarter = EdInputOutput.InputConsoleInteger("Введите номер четверти", Algebra.Sets.N);
 
         string message;
         switch (numberOfQuarter)

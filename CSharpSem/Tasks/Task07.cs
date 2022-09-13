@@ -12,7 +12,7 @@ internal class Task07 : Task, IRunnableFromConsole
         bool quitCheck = true;
         while (quitCheck)
         {
-            int number = EdInput.InputConsoleInteger("Введите трёхзначное число", Algebra.Sets.N);
+            int number = EdInputOutput.InputConsoleInteger("Введите трёхзначное число", Algebra.Sets.N);
             if (number <= 999 && number >= 100)
             {
                 Console.WriteLine("Последняя цифра трёхзначного числа " + number + " - " + number % 10);

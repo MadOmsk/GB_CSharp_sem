@@ -11,7 +11,8 @@ class Program
                                     Task16.Run, Task17.Run, Task18.Run, Task19.Run, Task20.Run,
                                     Task21.Run, Task22.Run, Task23.Run, Task24.Run, Task25.Run,
                                     Task26.Run, Task27.Run, Task28.Run, Task29.Run, Task30.Run,
-                                    TaskX01.Run };
+                                    Task31.Run, Task32.Run, Task33.Run, Task34.Run, Task35.Run,
+                                    Task36.Run, Task37.Run, Task38.Run, TaskX01.Run };
 
     static void Main(string[] args)
     {
@@ -34,11 +35,11 @@ class Program
             {
                 case true:
                     if (numberOfTask > 0 && numberOfTask <= taskRuns.Length)
-                        extendedRun(numberOfTask - 1);
+                        s_extendedRun(numberOfTask - 1);
                     else
                     {
                         Console.WriteLine("Введите корректный номер задачи");
-                        EdInput.PressSpaceToContinue();
+                        EdInputOutput.PressSpaceToContinue();
                     }
                     break;
                 case false:
@@ -53,7 +54,7 @@ class Program
                             break;
                         default:
                             Console.WriteLine("Введите корректную команду");
-                            EdInput.PressSpaceToContinue();
+                            EdInputOutput.PressSpaceToContinue();
                             break;
                     }
                     break;
@@ -63,12 +64,12 @@ class Program
     }
 
     // Расширенный запуск задачи. Дополнительно останавливает Run() до нажатия кнопки Space.
-    private static void extendedRun(int numberOfTask)
+    private static void s_extendedRun(int numberOfTask)
     {
         // Запускает метод Run задачи.
         taskRuns[numberOfTask].Invoke();
         // Запускает ожидание до нажатия кнопки Space.
-        EdInput.PressSpaceToContinue();
+        EdInputOutput.PressSpaceToContinue();
     }
 
     // Вывод справки.
@@ -77,6 +78,6 @@ class Program
         Console.WriteLine("Введите q для выхода");
         Console.WriteLine("Введите номер задачи для выполнения задачи");
         Console.WriteLine("Используйте десятичный разделитель, установленный системой. Скорее всего у Вас ',', либо '.'");
-        EdInput.PressSpaceToContinue();
+        EdInputOutput.PressSpaceToContinue();
     }
 }
