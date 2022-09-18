@@ -70,5 +70,21 @@ public static class Algebra
     {
         return Math.Round(number, precisionLog, MidpointRounding.AwayFromZero);
     }
+
+    /// <summary>Меняет местами значения переменных a и b (int).</summary>
+    public static void Swap(ref int a, ref int b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+
+    /// <summary>Меняет местами значения переменных a и b (double).</summary>
+    public static void Swap(ref double a, ref double b)
+    {
+        double temp = a;
+        a = b;
+        b = temp;
+    }
 }
 

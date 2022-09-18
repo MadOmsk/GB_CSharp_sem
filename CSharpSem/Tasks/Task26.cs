@@ -11,11 +11,11 @@ internal class Task26 : Task, IRunnableFromConsole
 
         int number = EdInputOutput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
-        System.Console.WriteLine($"Количество разрядов числа {number} - {s_getDepth(number)}");
+        System.Console.WriteLine($"Количество разрядов числа {number} - {GetDepth(number)}");
     }
 
     // Метод считает количество разрядов числа.
-    private static int s_getDepth(int number)
+    private static int GetDepth(int number)
     {
         int depth = 0;
         while (number > 0)

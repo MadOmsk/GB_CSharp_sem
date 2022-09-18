@@ -146,25 +146,25 @@ public static class EdInputOutput
         while (Console.ReadKey().Key != ConsoleKey.Spacebar) { }
     }
 
-    // Вывод массива int с разделителем
+    /// <summary>Вывод массива int с разделителем.</summary>
     public static void ConsolePrintWithSeparator(int[] array, string separator)
     {
         Console.WriteLine(String.Join(separator, array));
     }
 
-    // Вывод массива int с разделителем " "
+    /// <summary>Вывод массива int с разделителем " ".</summary>
     public static void ConsolePrintWithSeparator(int[] array)
     {
         ConsolePrintWithSeparator(array, " ");
     }
 
-    // Вывод массива double с разделителем
+    /// <summary>Вывод массива double с разделителем.</summary>
     public static void ConsolePrintWithSeparator(double[] array, string separator)
     {
         Console.WriteLine(String.Join(separator, array));
     }
 
-    // Вывод массива double с разделителем " "
+    /// <summary>Вывод массива double с разделителем " ".</summary>
     public static void ConsolePrintWithSeparator(double[] array)
     {
         ConsolePrintWithSeparator(array, " ");

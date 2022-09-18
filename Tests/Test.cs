@@ -1,53 +1,10 @@
 ﻿using EducationLibraries;
 
-test9(12345678999.0);
-test9(12345678998.0);
-test9(12345678500.0);
-test9(12345679999.0);
-test9(737_873);
-test9(737_870);
-test9(_randomLong());
-test9(_randomLong());
-test9(_randomLong());
 
-
-for (int i = 1; i < 16; i++) test10(i, 100_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 16; i++) test10(i, 1_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 16; i++) test10(i, 10_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 16; i++) test10(i, 100_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 16; i++) test10(i, 500_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 16; i++) test10(i, 1_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 16; i++) test10(i, 2_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-/*for (int i = 1; i < 9; i++) test10(i, 10_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 9; i++) test10(i, 100_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 9; i++) test10(i, 1_000_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 9; i++) test10(i, 10_000_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 9; i++) test10(i, 100_000_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 9; i++) test10(i, 1_000_000_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 9; i++) test10(i, 10_000_000_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 9; i++) test10(i, 100_000_000_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 9; i++) test10(i, 1_000_000_000_000_000_000);
-System.Console.WriteLine("_______________________________________________");
-for (int i = 1; i < 9; i++) test10(i, 9_200_000_000_000_000_000);*/
-
-
-
-
+test11(-10, 10);
+test11(-10, 10);
+test11(-10, 10);
+test11(-10, 10);
 
 //System.Console.WriteLine((long)12345678999);
 
@@ -175,3 +132,14 @@ void test10(int znak, int limit)
     System.Console.WriteLine($"{negative / (positive + negative) * 100 :F2}% : (znak - {znak}, limit - {limit})");
 }
 
+void test11(double min, double max){
+    var array = new double[10];
+    Arrays.FillArray(array, min, max);
+    EdInputOutput.ConsolePrintWithSeparator(array);
+}
+
+void test12(double min, double max){
+    var array = new double[10];
+    Arrays.FindMax(array);
+    EdInputOutput.ConsolePrintWithSeparator(array);
+}

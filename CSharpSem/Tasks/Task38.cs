@@ -9,8 +9,17 @@ internal class Task38 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-       
+        var array = new double[10];
+        Arrays.FillArray(array, -10, 10);
+
+        EdInputOutput.ConsolePrintWithSeparator(array);
+
+        System.Console.WriteLine($"Разница между максимальным и минимальным значением массива равна {SubstractMinFromMax(array)}");
     }
 
-   
+    // Находит разницу между максимальным и минимальным значением массива.
+    private static double SubstractMinFromMax(double[] array)
+    {
+        return Arrays.FindMax(array) - Arrays.FindMin(array);
+    }
 }

@@ -12,7 +12,9 @@ class Program
                                     Task21.Run, Task22.Run, Task23.Run, Task24.Run, Task25.Run,
                                     Task26.Run, Task27.Run, Task28.Run, Task29.Run, Task30.Run,
                                     Task31.Run, Task32.Run, Task33.Run, Task34.Run, Task35.Run,
-                                    Task36.Run, Task37.Run, Task38.Run, TaskX01.Run };
+                                    Task36.Run, Task37.Run, Task38.Run, Task39.Run, Task40.Run, 
+                                    Task41.Run, Task42.Run, Task43.Run, Task44.Run, Task45.Run,
+                                    TaskX01.Run };
 
     static void Main(string[] args)
     {

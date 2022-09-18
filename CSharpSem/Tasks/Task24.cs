@@ -11,11 +11,11 @@ internal class Task24 : Task, IRunnableFromConsole
 
         int number = EdInputOutput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
-        System.Console.WriteLine($"Сумма чисел от 1 до {number} равна {s_getSum(number)}");
+        System.Console.WriteLine($"Сумма чисел от 1 до {number} равна {GetSum(number)}");
     }
 
     // Метод считает сумму чисел от 1 до input
-    private static int s_getSum(int input)
+    private static int GetSum(int input)
     {
         int result = 0;
         for (int i = 1; i <= input; i++)

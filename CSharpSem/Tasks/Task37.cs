@@ -12,12 +12,12 @@ internal class Task37 : Task, IRunnableFromConsole
         var numbers = new int[11];
         Arrays.FillArray(numbers, -10, 10);
         EdInputOutput.ConsolePrintWithSeparator(numbers);
-        EdInputOutput.ConsolePrintWithSeparator(s_getProduceOppisite(numbers));
-        Console.WriteLine(String.Join(" ", s_getProduceOppisite(numbers)));
+        EdInputOutput.ConsolePrintWithSeparator(GetProduceOppisite(numbers));
+        Console.WriteLine(String.Join(" ", GetProduceOppisite(numbers)));
     }
 
     // Возвращает массив, состоящий произведения противоположных элементов входящего массива
-    private static int[] s_getProduceOppisite(int[] array)
+    private static int[] GetProduceOppisite(int[] array)
     {
         var produces = new int[(array.Length + 1) / 2];
         for (int i = 0; i < produces.Length; i++)

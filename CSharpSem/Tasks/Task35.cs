@@ -12,11 +12,11 @@ internal class Task35 : Task, IRunnableFromConsole
         var numbers = new int[123];
         Arrays.FillArray(numbers, -100, 200);
         EdInputOutput.ConsolePrintWithSeparator(numbers);
-        System.Console.WriteLine($"Этот массив содержит {s_findNumbersInRange(numbers, 10, 99)} чисел в промежутке от 10 до 99");
+        System.Console.WriteLine($"Этот массив содержит {FindNumbersInRange(numbers, 10, 99)} чисел в промежутке от 10 до 99");
     }
 
-    // Возвращает количество элементов массива в промежутке между minRangeValue и maxRangeValue (обе границы включает)
-    private static int s_findNumbersInRange(int[] array, int minRangeValue, int maxRangeValue)
+    // Возвращает количество элементов массива в промежутке между minRangeValue и maxRangeValue (обе границы включает).
+    private static int FindNumbersInRange(int[] array, int minRangeValue, int maxRangeValue)
     {
         int count = 0;
         //for (int i = 0; i < array.Length; i++)

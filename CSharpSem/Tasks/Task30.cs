@@ -9,11 +9,11 @@ internal class Task30 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-        Console.WriteLine(String.Join(", ", s_getRandomArray(8)));
+        Console.WriteLine(String.Join(", ", GetRandomArray(8)));
     }
 
     /// <summary>Метод создаёт массив заданной длины, заполненный случайными нулями или единицами.</summary>
-    private static int[] s_getRandomArray(int length)
+    private static int[] GetRandomArray(int length)
     {
         var array = new int[length];
         for (int i = 0; i < length; i++)

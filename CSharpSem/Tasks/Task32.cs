@@ -14,12 +14,12 @@ internal class Task32 : Task, IRunnableFromConsole
         Arrays.FillArray(numbers, -100, 100);
         EdInputOutput.ConsolePrintWithSeparator(numbers);
 
-        s_reverse(numbers);
+        ReverseArray(numbers);
         EdInputOutput.ConsolePrintWithSeparator(numbers);
     }
 
     // Изменяет знак каждого элемента массива
-    private static void s_reverse(int[] array)
+    private static void ReverseArray(int[] array)
     {
         for (int i = 0; i < array.Length; i++)
         {

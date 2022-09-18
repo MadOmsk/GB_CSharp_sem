@@ -15,14 +15,14 @@ internal class Task33 : Task, IRunnableFromConsole
 
         int number = EdInputOutput.InputConsoleInteger($"Введите целое число", Algebra.Sets.Z);
 
-        if (s_isContainsNumber(numbers, number))
+        if (IsContainsNumber(numbers, number))
             Console.WriteLine($"Массив содержит число {number}");
         else
             Console.WriteLine($"Массив НЕ содержит число {number}");
     }
 
     // Определяет содержится ли элемент в массиве
-    private static bool s_isContainsNumber(int[] array, int number)
+    private static bool IsContainsNumber(int[] array, int number)
     {
         foreach (var item in array)
             if (item == number)

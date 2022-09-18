@@ -14,14 +14,14 @@ internal class Task31 : Task, IRunnableFromConsole
 
         // Вывод результата
         Console.WriteLine(String.Join(" ", numbers));
-        Console.WriteLine($"Сумма положительных элементов равна {s_getPositiveSum(numbers)}");
-        Console.WriteLine($"Сумма отрицательных элементов равна {s_getNegativeSum(numbers)}");
+        Console.WriteLine($"Сумма положительных элементов равна {GetPositiveSum(numbers)}");
+        Console.WriteLine($"Сумма отрицательных элементов равна {GetNegativeSum(numbers)}");
 
     }
 
 
   // Нахождение суммы положительных элементов
-    private static int s_getPositiveSum (int[] array){
+    private static int GetPositiveSum (int[] array){
         
       int result = 0;
         foreach (var number in array)
@@ -33,7 +33,7 @@ internal class Task31 : Task, IRunnableFromConsole
     }
 
       //  // Нахождение суммы отрицательных элементов
-    private static int s_getNegativeSum (int[] array){
+    private static int GetNegativeSum (int[] array){
         
       int result = 0;
         foreach (var number in array)
