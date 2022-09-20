@@ -12,6 +12,18 @@ public static class Arrays
         return array;
     }
 
+    /// <summary>Заполняет двумерный массив случайными элементами в диапазоне (max не включая).</summary>
+    public static int[,] FillTwoDemArray(int[,] array, int min, int max)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+                array[i, j] = new Random().Next(min, max);
+        }
+
+        return array;
+    }
+
     /// <summary>Заполнить массив double случайными элементами в диапазоне (max не включая).</summary>
     public static double[] FillArray(double[] array, double min, double max)
     {
@@ -68,6 +80,7 @@ public static class Arrays
         return min;
     }
 
+
     /// <summary>Копирует массив int поэлементно.</summary>
     public static int[] CopyArrayInt(int[] array)
     {
@@ -79,7 +92,7 @@ public static class Arrays
         return copiesArray;
     }
 
-    // Попробовать сделать копирования массива любого типа. Пока не работает
+    // TODO: Попробовать сделать копирования массива любого типа. Пока не работает
     /// <summary>Копирует массив int поэлементно.</summary>
     public static Object[] CopyArray(Object[] array)
     {
@@ -92,4 +105,15 @@ public static class Arrays
     }
 
 
+    // TODO: Ввести параметр depth
+    /// <summary>Выводит на экран двумерный массив.</summary>
+    public static void PrintTwoDemArray(int[,] array)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+                Console.Write($"{array[i, j],4} ");
+            Console.WriteLine();
+        }
+    }
 }
