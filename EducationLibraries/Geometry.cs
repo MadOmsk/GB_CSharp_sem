@@ -4,26 +4,32 @@
 public class Point2D
 {
     /// <summary>Координаты.</summary>
-    public double X, Y;
+    public double _x { get; set; }
+    public double _y { get; set; }
 
     /// <summary>Создаёт объект по двум координатам.</summary>
     public Point2D(double x, double y)
     {
-        X = x;
-        Y = y;
+        _x = x;
+        _y = y;
     }
 
     /// <summary>Создаёт объект из массива double.</summary>
     public Point2D(double[] xy)
     {
-        X = xy[0];
-        Y = xy[1];
+        _x = xy[0];
+        _y = xy[1];
     }
 
     /// <summary>Расчитывает расстояние между двумя точками на декартовой плоскости, возвращает double.</summary>
     public static double CalculateDistance(Point2D a, Point2D b)
     {
-        return Math.Sqrt(Math.Pow(b.X - a.X, 2) + Math.Pow(b.Y - a.Y, 2));
+        return Math.Sqrt(Math.Pow(b._x - a._x, 2) + Math.Pow(b._y - a._y, 2));
+    }
+
+    override public string ToString()
+    {
+        return $"({_x}; {_y})";
     }
 }
 
@@ -32,28 +38,35 @@ public class Point2D
 public class Point3D
 {
     /// <summary>Координаты.</summary>
-    public double X, Y, Z;
+    public double _x { get; set; }
+    public double _y { get; set; }
+    public double _z { get; set; }
 
     /// <summary>Создаёт объект по трём координатам.</summary>
     public Point3D(double x, double y, double z)
     {
-        X = x;
-        Y = y;
-        Z = z;
+        _x = x;
+        _y = y;
+        _z = z;
     }
 
     /// <summary>Создаёт объект из массива double.</summary>
     public Point3D(double[] xyz)
     {
-        X = xyz[0];
-        Y = xyz[1];
-        Z = xyz[2];
+        _x = xyz[0];
+        _y = xyz[1];
+        _z = xyz[2];
     }
 
     /// <summary>Расчитывает расстояние между двумя точками на декартовом пространстве, возвращает double.</summary>
     public static double CalculateDistance(Point3D a, Point3D b)
     {
-        return Math.Sqrt(Math.Pow(b.X - a.X, 2) + Math.Pow(b.Y - a.Y, 2) + Math.Pow(b.Z - a.Z, 2));
+        return Math.Sqrt(Math.Pow(b._x - a._x, 2) + Math.Pow(b._y - a._y, 2) + Math.Pow(b._z - a._z, 2));
+    }
+
+    override public string ToString()
+    {
+        return $"({_x}; {_y}, {_z})";
     }
 }
 
@@ -134,4 +147,35 @@ public class Polygon
         return true;
     }
 
+}
+
+/// <summary>Класс линия на плоскости.</summary>
+public class Line
+{
+    // Коэффициент наклона k (y = k * x + b).
+    private double _k { get; }
+    // Коэффициент смещения b (y = k * x + b).
+    private double _b { get; }
+
+    /// <summary>Создаёт линию из двух чисел k и b.</summary>
+    public Line(double k, double b)
+    {
+        _k = k;
+        _b = b;
+    }
+
+    /// <summary>Создаёт линию из массива из двух чисел k и b.</summary>
+    public Line(double[] kb)
+    {
+        _k = kb[0];
+        _b = kb[1];
+    }
+
+    // Точка пересечения двух прямых.
+    public static Point2D GetPointOfIntersection(Line line1, Line line2)
+    {
+        double x = (line2._b - line1._b) / (line1._k - line2._k);
+        double y = (line1._k * line2._b - line2._k * line1._b) / (line1._k - line2._k);
+        return new Point2D(x, y);
+    }
 }

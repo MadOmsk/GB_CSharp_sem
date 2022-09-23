@@ -12,13 +12,13 @@ internal class Task17 : Task, IRunnableFromConsole
         double[] xy = EdInputOutput.InputConsoleDouble("Введите координаты X Y (через пробел)", 2);
         var point = new Point2D(xy);
 
-        if (point.X > 0 && point.Y > 0)
+        if (point._x > 0 && point._y > 0)
             Console.WriteLine("1-я четверть");
-        else if (point.X < 0 && point.Y > 0)
+        else if (point._x < 0 && point._y > 0)
             Console.WriteLine("2-я четверть");
-        else if (point.X < 0 && point.Y < 0)
+        else if (point._x < 0 && point._y < 0)
             Console.WriteLine("3-я четверть");
-        else if (point.X > 0 && point.Y < 0)
+        else if (point._x > 0 && point._y < 0)
             Console.WriteLine("4-я четверть");
         else
             Console.WriteLine("Точка находится на оси");

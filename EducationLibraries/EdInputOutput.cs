@@ -81,22 +81,22 @@ public static class EdInputOutput
     /// <summary>Метод преобразовывает строку, предположительно содержащую какие-то числа, 
     /// разделённые символом, в массив чисел. Если не выходит, то бросает исключение.
     /// input - строка для преобразования.
-    /// n - ожидаемое число аргументов.
+    /// n - ожидаемое число аргументов. Если количество аргументов может быть любым, то n = -1.
     /// separator - разделитель строки.</summary>
     public static double[] StringToDoubles(string input, int n, char separator)
     {
         // Делит строку на части.
         string[] inputSplitted = input.Split(separator);
         // Если длина массива разделённой строки не равна числу введённых аргументов, то кидает ошибку.
-        if (inputSplitted.Length != n)
+        if (inputSplitted.Length != n && n != -1)
             throw new FormatException("Неверное число аргументов.");
 
         // Результат для вывода.
-        var result = new double[n];
+        var result = new double[inputSplitted.Length];
         // Переменная, показывающая удалось преобразование или нет.
         bool status = true;
         // Преобразовывает каждую часть строки в double. Если не получается, то бросает исключение.
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < inputSplitted.Length; i++)
         {
             status = double.TryParse(inputSplitted[i], out result[i]);
             if (!status)
