@@ -18,6 +18,7 @@ class Program
                                     Task51.Run, Task52.Run, Task53.Run, Task54.Run, Task55.Run,
                                     Task56.Run, Task57.Run, Task58.Run, Task59.Run, Task60.Run,
                                     Task61.Run, Task62.Run, Task63.Run, Task64.Run, Task65.Run,
+                                    Task66.Run, Task67.Run, Task68.Run, Task69.Run,
                                     TaskX01.Run };
 
     static void Main(string[] args)

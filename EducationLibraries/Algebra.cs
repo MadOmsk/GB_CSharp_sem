@@ -86,5 +86,29 @@ public static class Algebra
         a = b;
         b = temp;
     }
+
+    /// <summary>Находит минимальное число из двух (int)</summary>
+    public static int Min(int a, int b)
+    {
+        return a < b ? a : b;
+    }
+
+    /// <summary>Находит максимальное число из двух (int)</summary>
+    public static int Max(int a, int b)
+    {
+        return a > b ? a : b;
+    }
+
+    /// <summary>Находит минимальное число из двух (double)</summary>
+    public static double Min(double a, double b)
+    {
+        return a < b ? a : b;
+    }
+
+    /// <summary>Находит максимальное число из двух (double)</summary>
+    public static double Max(double a, double b)
+    {
+        return a > b ? a : b;
+    }
 }
 

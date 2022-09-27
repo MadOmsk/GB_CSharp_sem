@@ -11,7 +11,7 @@ internal class Task42 : Task, IRunnableFromConsole
 
         int number = EdInputOutput.InputConsoleInteger("Введите натуральное число", Algebra.Sets.N);
 
-        Console.WriteLine(ConvertDecToBinary(number));
+        Console.WriteLine(ConvertDecToBinaryRecursively(number));
     }
 
     // Преобразование через цикл.
@@ -26,13 +26,12 @@ internal class Task42 : Task, IRunnableFromConsole
         return result;
     }
 
-    // Через рекурсию. Не работает.
+    // Преобразование через цикл (рекурсивно).
     private static string ConvertDecToBinaryRecursively(int number)
     {
-        number /= 2;
+        if (number == 0)
+            return String.Empty;
 
-        string result = $"{ConvertDecToBinaryRecursively(number % 2)}";
-        if (number == 0) return result;
-        return result;
+        return $"{ConvertDecToBinaryRecursively(number / 2)}{number % 2}";
     }
 }
