@@ -10,38 +10,37 @@ internal class Task57 : Task, IRunnableFromConsole
         Console.WriteLine(description);
 
         var array = new int[4, 4];
-        Arrays.FillTwoDemArray(array, 0, 10);
+        Arrays.FillTwoDemArray(array, -9, 1);
         Arrays.PrintTwoDemArray(array);
 
         Console.WriteLine("________________________________________________");
 
-        PrintDictionary(GetDictionary(array));
+        int[] array1d = Arrays.Convert2DArrayTo1D(array);
+
+        PrintDictionary(GetDictionary(array1d));
     }
 
     // Создаёт словарь элементов массива array.
-    private static List<ElementFrequency> GetDictionary(int[,] array)
+    private static List<ElementFrequency> GetDictionary(int[] array)
     {
         // Создаёт словарь (пустой).
         var dictionary = new List<ElementFrequency>();
-        for (int i = 0; i < array.GetLength(0); i++)
+        for (int i = 0; i < array.Length; i++)
         {
-            for (int j = 0; j < array.GetLength(1); j++)
-            {
-                // Ищет в dictionary элемент array[i,j].
-                int index = GetIndexInList(dictionary, array[i, j]);
-                // Если нашёл элемент, то увеличивает частоту на 1.
-                if (index != -1)
-                    dictionary[index].Frequency++;
-                // Если не нашёл элемент, то добавляет его в dictionary с частотой 1.
-                else
-                    dictionary.Add(new ElementFrequency(array[i, j]));
-            }
+            // Ищет в dictionary элемент array[i,j].
+            int index = GetIndexInList(dictionary, array[i]);
+            // Если нашёл элемент, то увеличивает частоту на 1.
+            if (index != -1)
+                dictionary[index].Frequency++;
+            // Если не нашёл элемент, то добавляет его в dictionary с частотой 1.
+            else
+                dictionary.Add(new ElementFrequency(array[i]));
         }
         return dictionary;
     }
 
     // Метод ищет элемент в dictionary. 
-    //Если находит, то возвращает его индекс в словаре, если не находит, то возвращает -1.
+    // Если находит, то возвращает его индекс в словаре, если не находит, то возвращает -1.
     private static int GetIndexInList(List<ElementFrequency> dictionary, int element)
     {
         for (int i = 0; i < dictionary.Count; i++)

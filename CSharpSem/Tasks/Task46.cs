@@ -17,6 +17,4 @@ internal class Task46 : Task, IRunnableFromConsole
         Arrays.FillTwoDemArray(numbers, -9, 10);
         Arrays.PrintTwoDemArray(numbers);
     }
-
-
 }

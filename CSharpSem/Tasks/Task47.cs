@@ -1,9 +1,9 @@
-// Заполняет двумерный массив по формуле A[i, j] = i + j.
+// Программа заполняет двумерный массив размером m*n случайными вещественными числами.
 using EducationLibraries;
 
 internal class Task47 : Task, IRunnableFromConsole
 {
-    private static string description = "Заполняет двумерный массив по формуле A[i, j] = i + j.";
+    private static string description = "Заполняет двумерный массив размером m*n случайными вещественными числами.";
 
     new internal static void Run()
     {
@@ -12,17 +12,11 @@ internal class Task47 : Task, IRunnableFromConsole
         int height = EdInputOutput.InputConsoleInteger("Введите количество строк:", Algebra.Sets.N);
         int width = EdInputOutput.InputConsoleInteger("Введите количество столбцов:", Algebra.Sets.N);
 
-        var numbers = new int[height, width];
+        var numbers = new double[height, width];
 
-        FillTwoDemArray(numbers);
+        Arrays.FillTwoDemArray(numbers, -0.5, 0.1);
         Arrays.PrintTwoDemArray(numbers);
     }
-
-    // Заполняет массив по формуле A[i, j] = i + j.
-    private static void FillTwoDemArray(int[,] array)
-    {
-        for (int i = 0; i < array.GetLength(0); i++)
-            for (int j = 0; j < array.GetLength(1); j++)
-                array[i, j] = i + j;
-    }
 }
+
+
