@@ -26,8 +26,6 @@ internal class Task55 : Task, IRunnableFromConsole
         {
             Console.WriteLine(e.Message);
         }
-
-
     }
 
     // Меняет местами строки и столбцы.
