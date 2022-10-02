@@ -10,18 +10,22 @@ internal class Task59 : Task, IRunnableFromConsole
         Console.WriteLine(description);
 
         var array = new int[4, 4];
-        Arrays.FillTwoDemArray(array, 0, 10);
+        Arrays.FillTwoDemArray(array, 0, 30);
         Arrays.PrintTwoDemArray(array);
-
         Console.WriteLine("________________________________________________");
 
+        Tuple<int, int> coordinates = FindMin(array);
 
+        Console.WriteLine(coordinates);
+        
+        int[,] result = DeleteRow(DeleteColumn(array, coordinates.Item2), coordinates.Item1);
 
+        Arrays.PrintTwoDemArray(result);
 
 
     }
 
-    // Находит минимальный элемент в массиве int.
+    // Находит минимальный элемент в массиве int. Возвращает координаты
     private static Tuple<int, int> FindMin(int[,] array)
     {
         int min = array[0, 0];
@@ -33,8 +37,10 @@ internal class Task59 : Task, IRunnableFromConsole
             for (int j = 0; j < array.GetLength(1); j++)
             {
                 if (array[i, j] < min)
+                {
                     min = array[i, j];
-                coordinates = Tuple.Create(i, j);
+                    coordinates = Tuple.Create(i, j);
+                }
             }
         }
         return coordinates;
@@ -46,9 +52,29 @@ internal class Task59 : Task, IRunnableFromConsole
         var result = new int[array.GetLength(0) - 1, array.GetLength(1)];
         for (int i = 0; i < result.GetLength(0); i++)
         {
-            for (int j = 0; j < result.GetLength(0); j++)
+            for (int j = 0; j < result.GetLength(1); j++)
             {
-                
+                if (i < row)
+                    result[i, j] = array[i, j];
+                else
+                    result[i, j] = array[i + 1, j];
+            }
+        }
+        return result;
+    }
+
+    // Удаляет столбец в массиве и возвращает новый массив
+    private static int[,] DeleteColumn(int[,] array, int column)
+    {
+        var result = new int[array.GetLength(0), array.GetLength(1) - 1];
+        for (int i = 0; i < result.GetLength(0); i++)
+        {
+            for (int j = 0; j < result.GetLength(1); j++)
+            {
+                if (j < column)
+                    result[i, j] = array[i, j];
+                else
+                    result[i, j] = array[i, j + 1];
             }
         }
         return result;

@@ -1,138 +1,118 @@
-// Заполняет спирально массив 4x4. НЕ ЗАКОНЧЕНО.
+// Заполняет спирально массив с заданными координатами.
 using EducationLibraries;
 
 internal class Task62 : Task, IRunnableFromConsole
 {
-    private static string description = "Заполняет спирально массив 4x4. НЕ ЗАКОНЧЕНО.";
+    private static string description = "Заполняет спирально массив с заданными координатами";
 
     new internal static void Run()
     {
         Console.WriteLine(description);
 
-        int[,] array = new int[4, 4];
+        int[] size = EdInputOutput.InputConsoleInteger("Введите размер массива (через пробел)", 2, Algebra.Sets.N);
+
+        int[,] array = new int[size[0], size[1]];
+
+        Arrays.PrintTwoDemArray(FillArraySpiral(array));
+    }
+
+    private static void TestCell(bool[,] supportArray, int i, int j, int direction)
+    {
+        Tuple<int, int> cell = Tuple.Create(i, j);
+        Tuple<int, int> nextCell = GetNextCell(direction, cell);
+        bool isNextFilled = IsNextFilled(supportArray, direction, cell);
+        bool isNearestFilled = IsNearestFilled(supportArray, cell);
+        Console.WriteLine($"[{cell.Item1}, {cell.Item2}], direction: {direction} -> next: [{nextCell.Item1}, {nextCell.Item2}], filled: {isNextFilled}, nearest: {isNearestFilled}");
     }
 
     // Заполняет массив спирально.
-    // ПОКА НЕ РАБОТАЕТ.
     private static int[,] FillArraySpiral(int[,] array)
     {
-        // Границы.
-        int leftBorder = 0;
-        int rightBorder = array.GetLength(1) - 1;
-        int topBorder = 0;
-        int bottomBorder = array.GetLength(0) - 1;
         // Направление заполнения. 0 - вправо, 1 - вниз, 2, - влево, 3 - вверх.
         int direction = 0;
-        int count = 1;
+        // Начальная точка.
+        Tuple<int, int> coordinates = Tuple.Create(0, 0);
 
-        // Массив такого же размера, каждый элемент которого хранит значение, заполнен ли аналогичный элемент основного массива.
-        bool[,] supportArray = new bool[array.GetLength(0), array.GetLength(1)];
+        // Массив размера на 2 строки и столбца больше, каждый элемент которого хранит значение, заполнен ли аналогичный элемент основного массива.
+        bool[,] supportArray = CreateSupportArray(array);
+        // Заполняет первую ячейку.
+        FillCurrentCell(array, supportArray, coordinates, 1);
 
-        int i = 0;
-        int j = 0;
-        while (!isNearestFilled(supportArray, i, j))
+        for (int i = 0; i < array.Length - 1; i++)
         {
-
+            // Если следующая ячейка по направлению заполнена, то меняет направление.
+            while (IsNextFilled(supportArray, direction, coordinates))
+                ChangeDirection(ref direction);
+            // Переставляет координаты на следующую ячейку по направлению.
+            coordinates = GetNextCell(direction, coordinates);
+            // Заполняет текущую ячейку.
+            FillCurrentCell(array, supportArray, coordinates, i + 2);
         }
 
-        return null;
+        return array;
     }
 
-    // Если соседний элемент у границы массива, то он заполнен слева. Если не у границы, то заполнение определяется по заполнению соседнего элементаю.
-    private static bool isLeftFilled(bool[,] array, int i, int j)
+    // Создаёт и заполняет вспомогательный массив.
+    private static bool[,] CreateSupportArray(int[,] array)
     {
-        bool left;
-        if (j == 0)
-            left = true;
-        else
-            left = array[i, j - 1];
-        return left;
+        bool[,] supportArray = new bool[array.GetLength(0) + 2, array.GetLength(1) + 2];
+        for (int i = 0; i < supportArray.GetLength(0); i++)
+        {
+            for (int j = 0; j < supportArray.GetLength(1); j++)
+                supportArray[i, j] = i == 0 || j == 0 || i == supportArray.GetLength(0) - 1 || j == supportArray.GetLength(1) - 1;
+        }
+        return supportArray;
     }
 
-    // Аналогично для правого элемента.
-    private static bool isRightFilled(bool[,] array, int i, int j)
+    // Определяет заполнен ли следующий элемент (по направлению). coordinates - координаты из основного массива.
+    private static bool IsNextFilled(bool[,] supportArray, int direction, Tuple<int, int> coordinates)
     {
-        bool right;
-        if (j == array.GetLength(1) - 1)
-            right = true;
-        else
-            right = array[i, j + 1];
-        return right;
+        Tuple<int, int> nextCell = GetNextCell(direction, coordinates);
+        return supportArray[nextCell.Item1 + 1, nextCell.Item2 + 1];
     }
 
-    // Аналогично для верхнего элемента.
-    private static bool isTopFilled(bool[,] array, int i, int j)
+    // Возвращает координаты следующей ячейки (по направлению).
+    private static Tuple<int, int> GetNextCell(int direction, Tuple<int, int> coordinates)
     {
-        bool top;
-        if (i == 0)
-            top = true;
-        else
-            top = array[i - 1, j];
-        return top;
-    }
-
-    // Аналогично для нижнего элемента.
-    private static bool isBottomFilled(bool[,] array, int i, int j)
-    {
-        bool bottom;
-        if (i == array.GetLength(0) - 1)
-            bottom = true;
-        else
-            bottom = array[i + 1, j];
-        return bottom;
+        switch (direction)
+        {
+            case 0:
+                return Tuple.Create(coordinates.Item1, coordinates.Item2 + 1);
+            case 1:
+                return Tuple.Create(coordinates.Item1 + 1, coordinates.Item2);
+            case 2:
+                return Tuple.Create(coordinates.Item1, coordinates.Item2 - 1);
+            case 3:
+                return Tuple.Create(coordinates.Item1 - 1, coordinates.Item2);
+            default:
+                return null;
+        }
     }
 
     // Проверяет являются ли все соседние элементы заданного массива заполненными.
-    private static bool isNearestFilled(bool[,] array, int i, int j)
+    private static bool IsNearestFilled(bool[,] supportArray, Tuple<int, int> coordinates)
     {
-        // Переменные, в которых хранится состояние соседних элементов.
-        bool left, right, top, bottom;
+        bool isNearestFilled = true;
+        // Проверяет все направления. Если хотя бы одно false, то isNearestFilled станет false.
+        for (int i = 0; i < 4; i++)
+            isNearestFilled = isNearestFilled && IsNextFilled(supportArray, i, coordinates);
 
-        left = isLeftFilled(array, i, j);
-        right = isRightFilled(array, i, j);
-        top = isTopFilled(array, i, j);
-        bottom = isBottomFilled(array, i, j);
-
-        return left && right && top && bottom;
+        return isNearestFilled;
     }
 
     // Изменяет направление по кругу (0 -> 1 -> 2 -> 3 -> 0).
     private static void ChangeDirection(ref int direction)
     {
-        if (direction < 4)
+        if (direction < 3)
             direction++;
         else
             direction = 0;
     }
 
-    // НЕ РАБОТАЕТ.
-    private static void GetNextIndexByDirection(int[,] array, ref int i, ref int j, int direction)
+    // Заполняет текущую ячейку.
+    private static void FillCurrentCell(int[,] array, bool[,] supportArray, Tuple<int, int> coordinates, int value)
     {
-
-    }
-
-    // НЕ РАБОТАЕТ.
-    private static void FillNext(int[,] array, bool[,] supportArray, int i, int j, int direction, int count)
-    {
-
-        switch (direction)
-        {
-            case 0:
-                array[i, j + 1] = count;
-                break;
-            case 1:
-                array[i + 1, j] = count;
-                break;
-            case 2:
-                array[i, j - 1] = count;
-                break;
-            case 3:
-                array[i - 1, j] = count;
-                break;
-            default:
-                break;
-        }
-
-
+        array[coordinates.Item1, coordinates.Item2] = value;
+        supportArray[coordinates.Item1 + 1, coordinates.Item2 + 1] = true;
     }
 }

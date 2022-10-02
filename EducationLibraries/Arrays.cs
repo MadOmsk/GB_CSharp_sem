@@ -141,6 +141,18 @@ public static class Arrays
         }
     }
 
+    // TODO: Ввести параметр depth - количество символов выводимого элемента
+    /// <summary>Выводит на экран двумерный массив double.</summary>
+    public static void PrintTwoDemArray(bool[,] array)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+                Console.Write($"{array[i, j]:F3} ");
+            Console.WriteLine();
+        }
+    }
+
     // Преобразовывает двумерный массив int в одномерный массив int.
     public static int[] Convert2DArrayTo1D(int[,] array)
     {
