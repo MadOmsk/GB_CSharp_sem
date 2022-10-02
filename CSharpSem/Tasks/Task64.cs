@@ -13,9 +13,21 @@ internal class Task64 : Task, IRunnableFromConsole
         int min = Algebra.Min(range[0], range[1]);
         int max = Algebra.Max(range[0], range[1]);
 
+        // Если оба числа неположительные, то выводит сообщение, что в этом промежутке нет натуральных чисел.
+        if (min <= 0 && max <= 0)
+        {
+            System.Console.WriteLine("В этом диапазоне нет натуральных чисел");
+            return;
+        }
+
+        // Если только min неположительный, то min = 1.
+        if (min <= 0)
+            min = 1;
+
         Console.WriteLine(GetRow(min, max));
     }
 
+    // Выводит строку - целые числа в промежутке от m до n (по возрастанию). n должен быть больше m.
     private static string GetRow(int m, int n)
     {
         if (n == m)

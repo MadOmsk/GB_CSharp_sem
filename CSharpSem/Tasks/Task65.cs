@@ -9,7 +9,6 @@ internal class Task65 : Task, IRunnableFromConsole
     {
         Console.WriteLine(description);
 
-
         int[] ranges = EdInputOutput.InputConsoleInteger("Введите диапазон чисел (через пробел)", 2, Algebra.Sets.Z);
         int rangeMin = Algebra.Min(ranges[0], ranges[1]);
         int rangeMax = Algebra.Max(ranges[0], ranges[1]);
@@ -17,6 +16,7 @@ internal class Task65 : Task, IRunnableFromConsole
         Console.WriteLine(GetNaturnalRow(rangeMin, rangeMax));
     }
 
+    // Возвращает строку - ряд чисел в промежутке между min и max (по убыванию).
     private static string GetNaturnalRow(int rangeMin, int rangeMax)
     {
         if (rangeMax == rangeMin)

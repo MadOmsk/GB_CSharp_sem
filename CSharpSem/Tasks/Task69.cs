@@ -15,7 +15,7 @@ internal class Task69 : Task, IRunnableFromConsole
         Console.WriteLine($"{@base} ^ {degree} = {Pow(@base, degree)}");
     }
 
-
+    // Возведение в степень (рекурсивно).
     private static int Pow(int @base, int degree)
     {
         if (degree == 0)

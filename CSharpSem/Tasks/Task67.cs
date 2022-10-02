@@ -14,7 +14,7 @@ internal class Task67 : Task, IRunnableFromConsole
         Console.WriteLine(GetNumbersSum(number));
     }
 
-    // Возвращает сумму цифр.
+    // Возвращает сумму цифр (рекурсивно).
     private static int GetNumbersSum(int number)
     {
         if (number == 0)

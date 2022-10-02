@@ -13,9 +13,17 @@ internal class Task68 : Task, IRunnableFromConsole
         PrintAckermann(numbers[0], numbers[1]);
     }
 
+    // Выводит на экран значение функции Аккермана.
     private static void PrintAckermann(int arg1, int arg2)
     {
-        Console.WriteLine($"Ackermann function for {arg1} and {arg2} = {CalculateAckermannFunc(arg1, arg2)}");
+        try
+        {
+            Console.WriteLine($"Ackermann function for {arg1} and {arg2} = {CalculateAckermannFunc(arg1, arg2)}");
+        }
+        catch (ArgumentOutOfRangeException e)
+        {
+            Console.WriteLine(e.Message);
+        }
     }
 
     // Возвращает значение функции Аккермана для arg1 и arg2.
