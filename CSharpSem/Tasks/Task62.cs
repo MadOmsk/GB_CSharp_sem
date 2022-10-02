@@ -85,7 +85,7 @@ internal class Task62 : Task, IRunnableFromConsole
             case 3:
                 return Tuple.Create(coordinates.Item1 - 1, coordinates.Item2);
             default:
-                return null;
+                return null!;
         }
     }
 
